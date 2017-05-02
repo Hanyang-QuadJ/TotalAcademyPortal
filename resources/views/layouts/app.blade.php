@@ -8,11 +8,17 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>수미사학원관리앱</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet"
     <!-- Scripts -->
     <script>
         window.Laravel = {!! json_encode([
@@ -36,7 +42,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        수미사학원관리앱
                     </a>
                 </div>
 
@@ -77,11 +83,25 @@
                 </div>
             </div>
         </nav>
-
-        @yield('content')
+        <div id="wrapper">
+          @include('layouts.sidebar')
+          @yield('content')
+        </div>
     </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    $(".selection").click(function (e) {
+      var selected = this.innerText;
+      $("#selected").html(selected);
+    });
+    </script>
 </body>
 </html>
