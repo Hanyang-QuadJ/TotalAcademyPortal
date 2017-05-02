@@ -7,26 +7,15 @@
             </a>
         </li>
         <li>
-            <a href="#">Dashboard</a>
+            <a href="/student">학생</a>
         </li>
         <li>
-            <a href="#">Shortcuts</a>
+            <a href="/teacher">선생</a>
         </li>
         <li>
-            <a href="#">Overview</a>
+            <a href="/lecture">강의</a>
         </li>
-        <li>
-            <a href="#">Events</a>
-        </li>
-        <li>
-            <a href="#">About</a>
-        </li>
-        <li>
-            <a href="#">Services</a>
-        </li>
-        <li>
-            <a href="#">Contact</a>
-        </li>
+
     </ul>
 </div>
 <!-- /#sidebar-wrapper -->

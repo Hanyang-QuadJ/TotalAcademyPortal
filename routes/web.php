@@ -12,6 +12,9 @@
 */
 
 Route::get('/','PagesController@index')->middleware('auth');
+Route::get('/student','PagesController@student')->middleware('auth');
+Route::get('/teacher','PagesController@teacher')->middleware('auth');
+Route::get('/lecture','PagesController@lecture')->middleware('auth');
 
 Auth::routes();
 
