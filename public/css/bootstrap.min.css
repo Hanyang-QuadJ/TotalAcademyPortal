@@ -4311,7 +4311,7 @@ select[multiple].input-group-sm>.form-control, select[multiple].input-group-sm>.
 .navbar {
     position: relative;
     min-height: 50px;
-    margin-bottom: 0px;
+    margin-bottom: 20px;
     border: 1px solid transparent
 }
 
