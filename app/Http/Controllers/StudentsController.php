@@ -38,6 +38,9 @@ class StudentsController extends Controller
     public function store(Request $request)
     {
         //
+        $student = new Student($request->all());
+        $student->save();
+        return redirect('/student');
     }
 
     /**
