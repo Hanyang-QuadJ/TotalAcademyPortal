@@ -17,8 +17,32 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 
     return [
         'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
+        'email' => "admin@gmail.com",
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
+    ];
+});
+$factory->define(App\Student::class, function (Faker\Generator $faker) {
+
+    return [
+        'name' => $faker->name.".학생",
+    ];
+});
+$factory->define(App\Academy::class, function (Faker\Generator $faker) {
+
+    return [
+        'name' => $faker->name.".학원",
+    ];
+});
+$factory->define(App\Course::class, function (Faker\Generator $faker) {
+
+    return [
+        'name' => $faker->name.".강좌",
+    ];
+});
+$factory->define(App\Teacher::class, function (Faker\Generator $faker) {
+
+    return [
+        'name' => $faker->name.".강사",
     ];
 });

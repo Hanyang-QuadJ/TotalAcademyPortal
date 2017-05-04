@@ -18,7 +18,13 @@
 
     <!-- Custom CSS -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet"
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/dataTables.bootstrap.css" rel="stylesheet">
+    <script src="https://use.fontawesome.com/1ea6704a44.js"></script>
+
+
+
+
     <!-- Scripts -->
     <script>
         window.Laravel = {!! json_encode([
@@ -92,6 +98,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
 
+
     <!-- Menu Toggle Script -->
     <script>
     $("#menu-toggle").click(function(e) {
@@ -102,6 +109,13 @@
       var selected = this.innerText;
       $("#selected").html(selected);
     });
+    </script>
+    <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('js/dataTables.bootstrap.min.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            $('#student-table').DataTable();
+        } );
     </script>
 </body>
 </html>

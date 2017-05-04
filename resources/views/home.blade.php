@@ -20,9 +20,9 @@
                           <span class="sr-only">Toggle Dropdown</span>
                         </button>
                         <ul class="dropdown-menu">
-                          <li class="selection"><a href="#">수미사 대치동지점</a></li>
-                          <li class="selection"><a href="#">수미사 해운대지점</a></li>
-                          <li class="selection"><a href="#">수미사 청주지점</a></li>
+                            @foreach($academies as $academy)
+                            <li class="selection">{{$academy->name}}</li>
+                            @endforeach
                         </ul>
                       </div>
                     </div>
