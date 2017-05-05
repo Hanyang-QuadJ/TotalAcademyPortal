@@ -12,12 +12,14 @@
 */
 
 Route::get('/','PagesController@index')->middleware('auth');
-Route::get('/student','PagesController@student')->middleware('auth');
-Route::get('/teacher','PagesController@teacher')->middleware('auth');
-Route::get('/lecture','PagesController@lecture')->middleware('auth');
+// Route::get('/student','PagesController@student')->middleware('auth');
+// Route::get('/teacher','PagesController@teacher')->middleware('auth');
+// Route::get('/lecture','PagesController@lecture')->middleware('auth');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('/student','StudentsController');
 
+Route::group(['middleware' => ['auth']], function () {
+  Route::resource('/student','StudentsController');
+});
