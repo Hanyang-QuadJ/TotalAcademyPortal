@@ -40,24 +40,11 @@
                     @endforeach
                     </tbody>
                 </table>
-                <hr>
-                <h2>학생등록</h2>
-                <div class="col-md-12">
-
-                    <form action="/student" method="post">
-                        {{csrf_field()}}
-
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                    <input type="text" name="name" class="form-control" id="" placeholder="이름을 입력하세요">
-                                </div>
-                            </div>
-
-                        <button class="btn btn-block" type="submit">등록</button>
-
-                    </form>
+                <div class="col-lg-12">
+                    <a href="/student/create"><button class="btn btn-primary btn-block">학생등록</button></a>
                 </div>
+                <hr>
+
 
                 <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
             </div>
