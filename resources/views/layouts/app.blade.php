@@ -36,9 +36,8 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="container">
+            <div class="navbar-side">
                 <div class="navbar-header">
-
                     <!-- Collapsed Hamburger -->
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
                         <span class="sr-only">Toggle Navigation</span>
@@ -49,7 +48,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        수미사학원관리앱
+                      <img src="{{ asset('image/logo.png') }}" alt="Total Academy Portal" width="80px;">
                     </a>
                 </div>
 
