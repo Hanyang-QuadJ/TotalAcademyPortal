@@ -27,6 +27,7 @@ class StudentsController extends Controller
     public function create()
     {
         //
+        return view('pages.students.create');
     }
 
     /**
@@ -40,7 +41,7 @@ class StudentsController extends Controller
         //
         $student = new Student($request->all());
         $student->save();
-        return view('/student/create');
+        return view('pages.students.create');
     }
 
     /**
