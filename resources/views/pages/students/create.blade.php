@@ -1,6 +1,7 @@
 @extends('layouts.app')
+
 @section('content')
-    <div id="page-content-wrapper" class="" style="margin-top: 50px">
+    <div id="page-content-wrapper" class="my_container">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
@@ -17,11 +18,9 @@
                         <button type="submit" class="btn btn-primary">등록</button>
                     </form>
 
-
-
                     <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
                 </div>
             </div>
         </div>
     </div>
-    @endsection
+@endsection

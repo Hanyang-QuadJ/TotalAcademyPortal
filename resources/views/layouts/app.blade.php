@@ -14,14 +14,12 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="{{ asset('css/simple-sidebar.css') }}" rel="stylesheet">
-    {{--<link href="css/simple-sidebar.css" rel="stylesheet">--}}
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/dataTables.bootstrap.css') }}" rel="stylesheet">
-    {{--<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet">--}}
 
     <script src="https://use.fontawesome.com/1ea6704a44.js"></script>
 
