@@ -12,7 +12,7 @@ class PagesController extends Controller
     }
 
     public function student() {
-      return view('pages.student');
+      return view('pages.students');
     }
 
     public function teacher() {

@@ -16,7 +16,7 @@ class StudentsController extends Controller
     {
         //
         $students = Student::all();
-        return view('pages.student',compact('students'));
+        return view('pages.students.student',compact('students'));
     }
 
     /**
@@ -40,7 +40,7 @@ class StudentsController extends Controller
         //
         $student = new Student($request->all());
         $student->save();
-        return redirect('/student');
+        return view('/student/create');
     }
 
     /**
