@@ -41,7 +41,7 @@ class StudentsController extends Controller
         //
         $student = new Student($request->all());
         $student->save();
-        return view('pages.students.create');
+        return redirect('/student');
     }
 
     /**

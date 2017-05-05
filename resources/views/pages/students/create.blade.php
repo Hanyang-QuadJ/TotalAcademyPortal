@@ -6,14 +6,15 @@
                 <div class="col-lg-12">
                     <h1>학생등록</h1>
                     <hr>
-                    <form>
+                    <form action="/student" method="post">
+                        {{csrf_field()}}
                         <div class="form-group">
                             <div class="input-group">
                                 <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                <input type="text" class="form-control" placeholder="이름을 입력하세요">
+                                <input type="text" name="name" class="form-control" placeholder="이름을 입력하세요">
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Transfer cash</button>
+                        <button type="submit" class="btn btn-primary">등록</button>
                     </form>
 
 
