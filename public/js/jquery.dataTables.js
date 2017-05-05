@@ -11479,7 +11479,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoEmpty": "Showing 0 to 0 of 0 entries",
+			"sInfoEmpty": "0개중에서 0에서 0까지 표시",
 	
 	
 			/**
@@ -11501,7 +11501,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoFiltered": "(filtered from _MAX_ total entries)",
+			"sInfoFiltered": "(전체 _MAX_ 항목 중에서 검색 한 결과입니다)",
 	
 	
 			/**

@@ -32,7 +32,7 @@
                             </td>
                             <td>
                                 <button class="btn btn-success">자세히</button>
-                                <button class="btn btn-default">수정</button>
+                                <button class="btn btn-warning">수정</button>
                                 <button class="btn btn-danger">퇴원</button>
                             </td>
 
