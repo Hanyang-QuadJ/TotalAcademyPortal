@@ -91,10 +91,19 @@
                 </div>
             </div>
         </nav>
-        <div id="wrapper">
-          @include('layouts.sidebar')
-          @yield('content')
-        </div>
+        @if (Auth::check())
+          <div id="wrapper" class="toggled">
+            @include('layouts.sidebar')
+            @yield('content')
+          </div>
+        @else
+          <div id="wrapper">
+            @include('layouts.sidebar')
+            @yield('content')
+          </div>
+        @endif
+
+
     </div>
 
     <!-- Scripts -->
