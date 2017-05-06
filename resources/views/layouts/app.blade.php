@@ -38,8 +38,8 @@
       <nav class="navbar navbar-default navbar-fixed-top">
           <div class="container">
               <div class="navbar-header">
-                  <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="{{ asset('image/logo.png') }}" alt="Total Academy Portal" width="80px;">
+                  <a href="#menu-toggle" class="navbar-brand" id="menu-toggle">
+                    <img src="{{ asset('image/logo.png') }}" alt="Total Academy Portal" height="50px;" width="auto;">
                   </a>
               </div>
 

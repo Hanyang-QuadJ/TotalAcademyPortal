@@ -2,8 +2,8 @@
 <div id="sidebar-wrapper">
     <ul class="sidebar-nav">
         <li class="sidebar-brand">
-            <a href="#">
-                Start Bootstrap
+            <a href="/">
+                Total Academy Portal
             </a>
         </li>
         <li>

@@ -4,7 +4,7 @@
 <div id="campus-select">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-md-offset-3">
+            <div class="col-md-6 col-md-offset-3 col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">학원선택</div>
 
@@ -21,7 +21,7 @@
                         </button>
                         <ul class="dropdown-menu">
                             @foreach($academies as $academy)
-                            <li class="selection">{{$academy->name}}</li>
+                            <li class="selection"><a>{{$academy->name}}</a></li>
                             @endforeach
                         </ul>
                       </div>
