@@ -32,8 +32,12 @@
                             </td>
                             <td>
                                 <button class="btn btn-success">자세히</button>
-                                <a href="/student/create/{{$student->id}}/edit"><button class="btn btn-warning">수정</button></a>
-                                <button class="btn btn-danger">퇴원</button>
+                                <a href="/student/{{$student->id}}/edit"><button class="btn btn-warning">수정</button></a>
+                                <form action="/student/{{$student->id}}" method="post">
+                                    {{method_field('DELETE')}}
+                                    {{ csrf_field() }}
+                                    <button class="btn btn-danger">퇴원</button>
+                                </form>
                             </td>
 
                         </tr>

@@ -53,6 +53,8 @@ class StudentsController extends Controller
     public function show($id)
     {
         //
+        $students = Student::findOrFail($id);
+        return view('pages.students.show',compact('students'));
     }
 
     /**
@@ -64,6 +66,8 @@ class StudentsController extends Controller
     public function edit($id)
     {
         //
+        $students = Student::findOrFail($id);
+        return view('pages.students.edit',compact('students'));
     }
 
     /**
@@ -76,6 +80,9 @@ class StudentsController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $student = Student::findOrFail($id);
+        $student->update($request->all());
+        return view('pages.students.show', compact('student'));
     }
 
     /**
@@ -87,5 +94,6 @@ class StudentsController extends Controller
     public function destroy($id)
     {
         //
+
     }
 }
