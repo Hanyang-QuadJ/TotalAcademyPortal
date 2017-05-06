@@ -34,14 +34,8 @@
   margin-top: 80px;
 }
 /*dashboard*/
-.table-parent {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between
-}
-.table-child {
-  width:300px;
+.progress-bar {
+  background-color: #255940;
 }
 
 /*buttons*/
