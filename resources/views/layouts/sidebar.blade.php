@@ -13,7 +13,7 @@
             <a href="/teacher">선생</a>
         </li>
         <li>
-            <a href="/lecture">강의</a>
+            <a href="/course">강의</a>
         </li>
 
     </ul>
