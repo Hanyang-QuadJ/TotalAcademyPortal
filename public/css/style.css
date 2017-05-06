@@ -1,5 +1,15 @@
-/*학원선택페이지*/
+/*all*/
+* {
+  font-family: 'Open Sans',sans-serif;
+}
+/*app.blade.php*/
 
+.dropdown > a {
+  font-size: 15.5px;
+}
+.dropdown-menu>li>a {
+  font-size: 15.5px;
+}
 
 .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
   z-index: 3;
@@ -7,10 +17,6 @@
   cursor: default;
   background-color: #384246;
   border-color: #384246;
-}
-
-.my_container {
-  margin-top: 50px;
 }
 
 .navbar-side {
@@ -37,6 +43,7 @@
 .table-child {
   width:300px;
 }
+
 /*buttons*/
 .submit-btn {
   display: flex;
