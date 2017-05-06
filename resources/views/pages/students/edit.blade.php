@@ -38,6 +38,7 @@
     <script>
         $(document).ready(function () {
             $('#student-course-select').select2();
+            $('#student-course-select').select2().maximizeSelect2Height();
             $('#student-course-select').select2().val({!! json_encode($student->courses()->allRelatedIds()) !!}).trigger('change');
         });
     </script>

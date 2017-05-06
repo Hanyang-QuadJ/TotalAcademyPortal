@@ -36,6 +36,7 @@
     <script>
         $(document).ready(function () {
             $('#course-semester-create-select').select2();
+            $('#course-semester-create-select').select2().maximizeSelect2Height();
         });
     </script>
 @endsection

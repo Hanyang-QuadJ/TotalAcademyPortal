@@ -110,6 +110,7 @@
     </script>
     <script src="{{ asset('js/jquery.dataTables.js') }}"></script>
     <script src="{{ asset('js/select2.full.min.js') }}"></script>
+    <script src="{{ asset('js/maximize-select2-height.min.js') }}"></script>
     <script src="{{ asset('js/dataTables.bootstrap.min.js') }}"></script>
     <script>
         $(document).ready(function() {
