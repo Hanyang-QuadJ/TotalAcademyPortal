@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div id="page-content-wrapper" class="my_container">
+<div id="page-content-wrapper" class="" style="margin-top: 50px;">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
@@ -32,12 +32,8 @@
                             </td>
                             <td>
                                 <button class="btn btn-success">자세히</button>
-                                <a href="/student/{{$student->id}}/edit"><button class="btn btn-warning">수정</button></a>
-                                <form action="/student/{{$student->id}}" method="post">
-                                    {{method_field('DELETE')}}
-                                    {{ csrf_field() }}
-                                    <button class="btn btn-danger">퇴원</button>
-                                </form>
+                                <button class="btn btn-default">수정</button>
+                                <button class="btn btn-danger">퇴원</button>
                             </td>
 
                         </tr>
