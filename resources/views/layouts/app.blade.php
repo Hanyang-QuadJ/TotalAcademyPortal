@@ -127,5 +127,10 @@
             $('#course-table').DataTable();
         } );
     </script>
+    <script>
+        $(document).ready(function() {
+            $('#semester-table').DataTable();
+        } );
+    </script>
 </body>
 </html>

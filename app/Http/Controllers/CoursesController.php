@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Course;
+use App\Semester;
 
 class CoursesController extends Controller
 {
@@ -11,7 +12,8 @@ class CoursesController extends Controller
     {
         //
         $courses = Course::all();
-        return view('pages.courses.course',compact('courses'));
+        $semesters = Semester::all();
+        return view('pages.courses.course',compact('courses','semesters'));
     }
 
     public function create()

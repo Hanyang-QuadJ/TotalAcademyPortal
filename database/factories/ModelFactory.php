@@ -46,3 +46,9 @@ $factory->define(App\Teacher::class, function (Faker\Generator $faker) {
         'name' => $faker->name.".강사",
     ];
 });
+$factory->define(App\Semester::class, function (Faker\Generator $faker) {
+
+    return [
+        'name' => $faker->name.".학기",
+    ];
+});
