@@ -20,11 +20,9 @@
     <link href="{{ asset('css/simple-sidebar.css') }}" rel="stylesheet">
     <link href="{{ asset('css/dataTables.bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet">
 
     <script src="https://use.fontawesome.com/1ea6704a44.js"></script>
-
-
-
 
     <!-- Scripts -->
     <script>
@@ -99,7 +97,6 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
 
-
     <!-- Menu Toggle Script -->
     <script>
     $("#menu-toggle").click(function(e) {
@@ -112,6 +109,7 @@
     });
     </script>
     <script src="{{ asset('js/jquery.dataTables.js') }}"></script>
+    <script src="{{ asset('js/select2.full.min.js') }}"></script>
     <script src="{{ asset('js/dataTables.bootstrap.min.js') }}"></script>
     <script>
         $(document).ready(function() {
@@ -133,5 +131,6 @@
             $('#semester-table').DataTable();
         } );
     </script>
+    @yield('script')
 </body>
 </html>

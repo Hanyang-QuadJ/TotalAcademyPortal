@@ -12,15 +12,29 @@
                         <div class="form-group">
                             <div class="input-group">
                                 <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                <input type="text" name="name" value="{{$student->name}}" class="form-control" placeholder="name"/>
+                                <input type="text" name="name" value="{{$student->name}}" class="form-control"
+                                       placeholder="name"/>
                             </div>
                         </div>
+                        <select name="courses[]" class="form-control" id="student-course-select" multiple="multiple">
+                            @foreach($courses as $course)
+                                <option value="{{$course->id}}">{{$course->name}}</option>
+                            @endforeach
+                        </select>
                         <button type="submit" class="btn btn-primary">수정</button>
                     </form>
-                    <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+
                 </div>
             </div>
         </div>
     </div>
 
-    @endsection
+@endsection
+@section('script')
+    <script>
+        $('#student-course-select').select2();
+
+        $('#student-course-select').select2().val({!! json_encode($student->courses()->allRelatedIds()) !!}).trigger('change');
+
+    </script>
+@endsection

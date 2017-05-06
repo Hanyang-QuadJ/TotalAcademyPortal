@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Student;
+use App\Course;
 
 class StudentsController extends Controller
 {
@@ -39,7 +40,8 @@ class StudentsController extends Controller
     {
         //
         $student = Student::findOrFail($id);
-        return view('pages.students.edit',compact('student'));
+        $courses = Course::all();
+        return view('pages.students.edit',compact('student','courses'));
     }
 
     public function update(Request $request, $id)
@@ -47,6 +49,7 @@ class StudentsController extends Controller
         //
         $student = Student::findOrFail($id);
         $student->update($request->all());
+        $student->courses()->sync($request->courses);
         return redirect('/student');
     }
 

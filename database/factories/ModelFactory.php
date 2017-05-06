@@ -52,3 +52,10 @@ $factory->define(App\Semester::class, function (Faker\Generator $faker) {
         'name' => $faker->name.".학기",
     ];
 });
+$factory->define(App\CourseStudent::class, function (Faker\Generator $faker) {
+
+    return [
+        'student_id' => $faker->numberBetween($min = 1, $max = 30),
+        'course_id' => $faker->numberBetween($min = 1, $max = 30),
+    ];
+});
