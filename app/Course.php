@@ -8,6 +8,7 @@ class Course extends Model
 {
     protected $fillable = [
         'name',
+        'semester_id'
     ];
 
     public function students()
@@ -15,5 +16,10 @@ class Course extends Model
         return $this
             ->belongsToMany('App\Student','course_student')
             ->withTimestamps();
+    }
+    public function semester()
+    {
+        return $this
+            ->belongsTo('App\Semester');
     }
 }

@@ -15,6 +15,13 @@
                                 <input type="text" name="name" class="form-control" placeholder="이름을 입력하세요">
                             </div>
                         </div>
+                        <div class="form-group">
+                            <select name="semester_id" class="form-control" id="course-semester-create-select">
+                                @foreach($semesters as $semester)
+                                    <option value="{{$semester->id}}">{{$semester->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
                         <button type="submit" class="btn btn-primary">등록</button>
                     </form>
 
@@ -23,4 +30,12 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('script')
+    <script>
+        $(document).ready(function () {
+            $('#course-semester-create-select').select2();
+        });
+    </script>
 @endsection

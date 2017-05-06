@@ -17,8 +17,12 @@
                             </div>
                         </div>
                         <select name="courses[]" class="form-control" id="student-course-select" multiple="multiple">
-                            @foreach($courses as $course)
-                                <option value="{{$course->id}}">{{$course->name}}</option>
+                            @foreach($semesters as $semester)
+                                <optgroup label="{{$semester->name}}">
+                                    @foreach($semester->courses as $course)
+                                        <option value="{{$course->id}}">{{$course->name}}</option>
+                                    @endforeach
+                                </optgroup>
                             @endforeach
                         </select>
                         <button type="submit" class="btn btn-primary">수정</button>
@@ -32,9 +36,9 @@
 @endsection
 @section('script')
     <script>
-        $('#student-course-select').select2();
-
-        $('#student-course-select').select2().val({!! json_encode($student->courses()->allRelatedIds()) !!}).trigger('change');
-
+        $(document).ready(function () {
+            $('#student-course-select').select2();
+            $('#student-course-select').select2().val({!! json_encode($student->courses()->allRelatedIds()) !!}).trigger('change');
+        });
     </script>
 @endsection

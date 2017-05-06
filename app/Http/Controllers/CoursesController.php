@@ -10,7 +10,6 @@ class CoursesController extends Controller
 {
     public function index()
     {
-        //
         $courses = Course::all();
         $semesters = Semester::all();
         return view('pages.courses.course',compact('courses','semesters'));
@@ -18,8 +17,8 @@ class CoursesController extends Controller
 
     public function create()
     {
-        //
-        return view('pages.courses.create');
+        $semesters = Semester::all();
+        return view('pages.courses.create',compact('semesters'));
     }
 
     public function store(Request $request)

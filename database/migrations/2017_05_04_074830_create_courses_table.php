@@ -17,6 +17,14 @@ class CreateCoursesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->timestamps();
+
+            $table->integer('semester_id')->unsigned();
+
+            $table
+                ->foreign('semester_id')
+                ->references('id')
+                ->on('semesters')
+                ->onDelete('cascade');
         });
     }
 

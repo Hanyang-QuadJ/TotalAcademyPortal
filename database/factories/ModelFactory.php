@@ -38,6 +38,7 @@ $factory->define(App\Course::class, function (Faker\Generator $faker) {
 
     return [
         'name' => $faker->name.".강좌",
+        'semester_id' => $faker->numberBetween($min = 1, $max = 5),
     ];
 });
 $factory->define(App\Teacher::class, function (Faker\Generator $faker) {

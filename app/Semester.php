@@ -9,4 +9,9 @@ class Semester extends Model
     protected $fillable = [
         'name',
     ];
+
+    public function courses()
+    {
+        return $this->hasMany('App\Course');
+    }
 }

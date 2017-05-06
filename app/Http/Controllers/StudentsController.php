@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Semester;
 use Illuminate\Http\Request;
 use App\Student;
 use App\Course;
@@ -38,10 +39,10 @@ class StudentsController extends Controller
 
     public function edit($id)
     {
-        //
+        $semesters = Semester::all();
         $student = Student::findOrFail($id);
         $courses = Course::all();
-        return view('pages.students.edit',compact('student','courses'));
+        return view('pages.students.edit',compact('student','courses','semesters'));
     }
 
     public function update(Request $request, $id)
