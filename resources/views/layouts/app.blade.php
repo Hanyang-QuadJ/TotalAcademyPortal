@@ -18,8 +18,8 @@
 
     <!-- Custom CSS -->
     <link href="{{ asset('css/simple-sidebar.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/dataTables.bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
     <script src="https://use.fontawesome.com/1ea6704a44.js"></script>
 
@@ -38,14 +38,6 @@
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="navbar-side">
                 <div class="navbar-header">
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
                       <img src="{{ asset('image/logo.png') }}" alt="Total Academy Portal" width="80px;">

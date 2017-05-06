@@ -11,11 +11,12 @@
 .my_container {
   margin-top: 50px;
 }
+
 .navbar-side {
-  padding-left: 30px;
-  padding-right: 30px;
-  margin-left: auto;
-  margin-right: auto;
+  display:flex;
+  flex-flow : row nowrap;
+  justify-content: space-between;
+  margin: 0px 30px;
 }
 
 #campus-select {
