@@ -118,5 +118,10 @@
             $('#student-table').DataTable();
         } );
     </script>
+    <script>
+        $(document).ready(function() {
+            $('#teacher-table').DataTable();
+        } );
+    </script>
 </body>
 </html>
