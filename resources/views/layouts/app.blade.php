@@ -123,5 +123,10 @@
             $('#teacher-table').DataTable();
         } );
     </script>
+    <script>
+        $(document).ready(function() {
+            $('#course-table').DataTable();
+        } );
+    </script>
 </body>
 </html>
