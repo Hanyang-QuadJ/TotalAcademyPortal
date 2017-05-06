@@ -36,7 +36,7 @@
                                 <button class="btn btn-success">자세히</button>
                                 <a href="/teacher/{{$teacher->id}}/edit"><button class="btn btn-warning">수정</button></a>
 
-                                <form action="/teacher/{{$teacher->id}}" method="post">
+                                <form class="form-inline" action="/teacher/{{$teacher->id}}" method="post">
                                     {{method_field('DELETE')}}
                                     {{ csrf_field() }}
                                     <button class="btn btn-danger">퇴사</button>
