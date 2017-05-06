@@ -2,39 +2,79 @@
 
 @section('content')
   <div id="page-content-wrapper" style="margin-top: 50px;">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-              <img src="image/logo.png" alt="...">
-              <div class="caption">
-                <h3>Thumbnail label</h3>
-                <p>...</p>
-                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-              <img src="image/logo.png" alt="...">
-              <div class="caption">
-                <h3>Thumbnail label</h3>
-                <p>...</p>
-                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-              <img src="image/logo.png" alt="...">
-              <div class="caption">
-                <h3>Thumbnail label</h3>
-                <p>...</p>
-                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="container-fluid table-parent">
+        <div class="table-child">
+        <table class="table table-hover">
+          <tr>
+            <th>hello</th>
+            <th>hello</th>
+            <th>hello</th>
+          </tr>
+          <tr>
+            <td>hello</td>
+            <td>hello</td>
+            <td>hello</td>
+          </tr>
+          <tr>
+            <td>hello</td>
+            <td>hello</td>
+            <td>hello</td>
+          </tr>
+          <tr>
+            <td>hello</td>
+            <td>hello</td>
+            <td>hello</td>
+          </tr>
+        </table>
+      </div>
+      <div class="table-child">
+        <table class="table table-hover">
+          <tr>
+            <th>hello</th>
+            <th>hello</th>
+            <th>hello</th>
+          </tr>
+          <tr>
+            <td>hello</td>
+            <td>hello</td>
+            <td>hello</td>
+          </tr>
+          <tr>
+            <td>hello</td>
+            <td>hello</td>
+            <td>hello</td>
+          </tr>
+          <tr>
+            <td>hello</td>
+            <td>hello</td>
+            <td>hello</td>
+          </tr>
+        </table>
+      </div>
+      <div class="table-child">
+        <table class="table table-hover">
+          <tr>
+            <th>hello</th>
+            <th>hello</th>
+            <th>hello</th>
+          </tr>
+          <tr>
+            <td>hello</td>
+            <td>hello</td>
+            <td>hello</td>
+          </tr>
+          <tr>
+            <td>hello</td>
+            <td>hello</td>
+            <td>hello</td>
+          </tr>
+          <tr>
+            <td>hello</td>
+            <td>hello</td>
+            <td>hello</td>
+          </tr>
+        </table>
       </div>
   </div>
+</div>
 @endsection

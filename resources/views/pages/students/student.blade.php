@@ -3,6 +3,9 @@
 @section('content')
 <div id="page-content-wrapper" class="" style="margin-top: 50px;">
     <div class="container-fluid">
+          <div class="submit-btn">
+              <a href="/student/create"><button class="btn btn-default btn-block">학생등록</button></a>
+          </div>
         <div class="row">
             <div class="col-lg-12">
                 <table id="student-table" class="table table-striped table-bordered" cellspacing="0">
@@ -39,13 +42,6 @@
                     @endforeach
                     </tbody>
                 </table>
-                <div class="col-lg-12">
-                    <a href="/student/create"><button class="btn btn-primary btn-block">학생등록</button></a>
-                </div>
-                <hr>
-
-
-                
             </div>
         </div>
     </div>

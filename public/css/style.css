@@ -27,3 +27,19 @@
   text-align: center;
   margin-top: 80px;
 }
+/*dashboard*/
+.table-parent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between
+}
+.table-child {
+  width:300px;
+}
+/*buttons*/
+.submit-btn {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}

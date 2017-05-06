@@ -3,6 +3,9 @@
 @section('content')
 <div id="page-content-wrapper" style="margin-top: 50px;">
     <div class="container-fluid">
+      <div class="submit-btn">
+          <a href="/teacher/create"><button class="btn btn-default btn-block">선생등록</button></a>
+      </div>
         <div class="row">
             <div class="col-lg-12">
                 <table id="teacher-table" class="table table-striped table-bordered" cellspacing="0">
@@ -32,6 +35,7 @@
                             <td>
                                 <button class="btn btn-success">자세히</button>
                                 <a href="/teacher/{{$teacher->id}}/edit"><button class="btn btn-warning">수정</button></a>
+
                                 <form action="/teacher/{{$teacher->id}}" method="post">
                                     {{method_field('DELETE')}}
                                     {{ csrf_field() }}
@@ -43,10 +47,6 @@
                     @endforeach
                     </tbody>
                 </table>
-                <div class="col-lg-12">
-                    <a href="/teacher/create"><button class="btn btn-primary btn-block">강사등록</button></a>
-                </div>
-                <hr>
             </div>
         </div>
     </div>
