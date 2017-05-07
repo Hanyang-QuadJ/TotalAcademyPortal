@@ -31,7 +31,7 @@
 
                                 <td>{{$semester->name}}</td>
                                 <td>
-                                    {{$semester->created_at}}
+                                    {{$semester->created_at->format('Y-m-d')}}
 
                                 </td>
                                 <td>

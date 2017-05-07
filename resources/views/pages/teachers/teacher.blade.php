@@ -12,7 +12,8 @@
                     <thead>
                     <tr>
                         <th>이름</th>
-                        <th>등록날짜</th>
+                        <th>등록일</th>
+                        <th>최종수정일</th>
                         <th>관리</th>
                     </tr>
                     </thead>
@@ -20,6 +21,7 @@
                     <tr>
                         <th>이름</th>
                         <th>등록날짜</th>
+                        <th>최종수정일</th>
                         <th>관리</th>
                     </tr>
                     </tfoot>
@@ -29,7 +31,11 @@
 
                             <td>{{$teacher->name}}</td>
                             <td>
-                                {{$teacher->created_at}}
+                                {{$teacher->created_at->format('Y-m-d')}}
+
+                            </td>
+                            <td>
+                                {{$teacher->updated_at->format('Y-m-d')}}
 
                             </td>
                             <td>
