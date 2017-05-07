@@ -93,7 +93,7 @@
         @endif
       </section>
     </div>
-
+  
     @include('layouts.commonScript')
     @yield('script')
 </body>

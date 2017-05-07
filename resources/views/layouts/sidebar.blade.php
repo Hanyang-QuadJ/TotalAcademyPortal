@@ -1,6 +1,6 @@
 <!-- Sidebar -->
 <div id="sidebar-wrapper">
-    <ul class="sidebar-nav">
+    <ul class="sidebar-nav" id="side">
         <li class="sidebar-brand">
             <a href="/">
                 Total Academy Portal
