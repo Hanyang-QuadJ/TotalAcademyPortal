@@ -19,7 +19,10 @@ class StudentsController extends Controller
     public function create()
     {
         //
-        return view('pages.students.create');
+        $semesters = Semester::all();
+        $courses = Course::all();
+        $student = Student::all();
+        return view('pages.students.create',compact('semesters','courses','student'));
     }
 
     public function store(Request $request)
@@ -27,6 +30,7 @@ class StudentsController extends Controller
         //
         $student = new Student($request->all());
         $student->save();
+        $student->courses()->sync($request->courses,false);
         return redirect('/student');
     }
 
@@ -40,9 +44,8 @@ class StudentsController extends Controller
     public function edit($id)
     {
         $semesters = Semester::all();
-        $student = Student::findOrFail($id);
         $courses = Course::all();
-        return view('pages.students.edit',compact('student','courses','semesters'));
+        return view('pages.students.edit',compact('courses','semesters'));
     }
 
     public function update(Request $request, $id)
