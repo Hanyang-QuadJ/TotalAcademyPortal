@@ -8,11 +8,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="{{ asset('css/carousel.css') }}" rel="stylesheet">
 
   </head>
   <body class="login-body">
@@ -73,7 +71,6 @@
                                   <button type="submit" class="btn btn-primary new-btn">
                                       Login
                                   </button>
-
                                   <a class="btn btn-link" href="{{ route('password.request') }}">
                                       Forgot Your Password?
                                   </a>

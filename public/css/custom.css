@@ -1,6 +1,6 @@
 /*all*/
 * {
-  font-family: "Lato", "SpoqaHanSans", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Lato", "SpoqaHanSans", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 .content-margin {
   margin-top: 50px;
@@ -65,12 +65,8 @@
   font-weight: 300;
 }
 
-.selected-nav {
-  background-color: rgba(255,255,255,0.2);
-  color:black;
-}
-
 /*login*/
+
 .login-body {
   background-color:#255940;
 }

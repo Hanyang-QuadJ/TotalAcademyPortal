@@ -19,7 +19,7 @@
     <!-- Custom CSS -->
     <link href="{{ asset('css/simple-sidebar.css') }}" rel="stylesheet">
     <link href="{{ asset('css/dataTables.bootstrap.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
     <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet">
 
     <script src="https://use.fontawesome.com/1ea6704a44.js"></script>
@@ -93,7 +93,7 @@
         @endif
       </section>
     </div>
-  
+
     @include('layouts.commonScript')
     @yield('script')
 </body>
