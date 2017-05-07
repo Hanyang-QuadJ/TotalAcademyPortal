@@ -9,7 +9,8 @@ class SemestersController extends Controller
 {
     public function index()
     {
-        return redirect('/course');
+        $semesters = Semester::all();
+        return view('pages.semesters.semester',compact('semesters'));
     }
 
     public function create()
