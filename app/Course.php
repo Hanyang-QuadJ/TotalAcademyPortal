@@ -8,7 +8,8 @@ class Course extends Model
 {
     protected $fillable = [
         'name',
-        'semester_id'
+        'semester_id',
+        'teacher_id',
     ];
 
     public function students()
@@ -22,4 +23,10 @@ class Course extends Model
         return $this
             ->belongsTo('App\Semester');
     }
+    public function teacher()
+    {
+        return $this
+            ->belongsTo('App\Teacher');
+    }
+
 }

@@ -43,9 +43,10 @@ class StudentsController extends Controller
 
     public function edit($id)
     {
+        $student = Student::findOrFail($id);
         $semesters = Semester::all();
         $courses = Course::all();
-        return view('pages.students.edit',compact('courses','semesters'));
+        return view('pages.students.edit',compact('courses','semesters','student'));
     }
 
     public function update(Request $request, $id)
