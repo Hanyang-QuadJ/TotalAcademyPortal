@@ -33,7 +33,7 @@
 
                             </td>
                             <td>
-                                <button class="btn btn-success">자세히</button>
+                                <a href="/student/{{$student->id}}"><button class="btn btn-success">자세히</button></a>
                                 <a href="/student/{{$student->id}}/edit"><button class="btn btn-default">수정</button></a>
                                 <button class="btn btn-danger">퇴원</button>
                             </td>
