@@ -8,9 +8,9 @@
             @foreach($teacher->courses as $course)
                 <div class="col-md-4">
                     <div class="panel panel-success">
-                        <div class="panel-heading">{{$course->semester->name}}</div>
+                        <div class="panel-heading"><a href="/semester/{{$course->semester->id}}">{{$course->semester->name}}</a></div>
                         <div class="panel-body">
-                            {{$course->name}}
+                            <a href="/course/{{$course->id}}">{{$course->name}}</a>
                         </div>
 
                     </div>

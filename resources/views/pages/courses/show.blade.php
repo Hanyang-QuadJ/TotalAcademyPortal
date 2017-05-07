@@ -11,7 +11,7 @@
                     <div class="panel panel-success">
 
                         <div class="panel-body">
-                            {{$student->name}}
+                            <a href="/student/{{$student->id}}">{{$student->name}}</a>
                         </div>
 
                     </div>

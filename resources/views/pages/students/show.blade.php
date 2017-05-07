@@ -8,12 +8,12 @@
             @foreach($student->courses as $course)
             <div class="col-md-4">
                 <div class="panel panel-success">
-                    <div class="panel-heading">{{$course->semester->name}}</div>
+                    <div class="panel-heading"><a href="/semester/{{$course->semester->id}}">{{$course->semester->name}}</a></div>
                         <div class="panel-body">
-                            {{$course->name}}
+                            <a href="/course/{{$course->id}}">{{$course->name}}</a>
                         </div>
                     <div class="panel-footer pull-right">
-                        {{$course->teacher->name}}
+                        <a href="/teacher/{{$course->teacher->id}}">{{$course->teacher->name}}</a>
                     </div>
                 </div>
             </div>
@@ -24,8 +24,8 @@
                 <h3>시험성적</h3>
                 @foreach($student->exams as $exam)
                     <div class="col-md-4">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">{{$exam->name}}</div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading"><a href="/exam/{{$exam->id}}">{{$exam->name}}</a></div>
                             <div class="panel-body">
                                 {{$exam->pivot->score}}점
                             </div>
