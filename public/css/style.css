@@ -1,6 +1,6 @@
 /*all*/
 * {
-  font-family: 'Open Sans',sans-serif;
+  font-family: "Lato", "SpoqaHanSans", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 /*app.blade.php*/
 
@@ -47,4 +47,9 @@
 
 .form-inline {
   display: inline;
+}
+
+/*sidebar*/
+.sidebar-nav {
+  font-weight: 300;
 }
