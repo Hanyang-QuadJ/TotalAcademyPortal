@@ -27,7 +27,7 @@
                         <div class="panel panel-primary">
                             <div class="panel-heading">{{$exam->name}}</div>
                             <div class="panel-body">
-                                {{$exam->pivot->score}}
+                                {{$exam->pivot->score}}점
                             </div>
                         </div>
                     </div>

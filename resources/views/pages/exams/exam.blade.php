@@ -35,7 +35,7 @@
 
                                 </td>
                                 <td>
-                                    <button class="btn btn-success">자세히</button>
+                                    <a href="/exam/{{$exam->id}}"><button class="btn btn-success">자세히</button></a>
                                     <a href="/exam/{{$exam->id}}/edit">
                                         <button class="btn btn-default">수정</button>
                                     </a>

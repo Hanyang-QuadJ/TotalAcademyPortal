@@ -54,7 +54,7 @@ class TeachersController extends Controller
     public function show($id)
     {
         //
-        $student = Student::findOrFail($id);
+        $teacher = Teacher::findOrFail($id);
         return view('pages.teachers.show',compact('teacher'));
     }
 
