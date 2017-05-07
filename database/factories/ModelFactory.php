@@ -55,10 +55,25 @@ $factory->define(App\Semester::class, function (Faker\Generator $faker) {
         'name' => $faker->name.".학기",
     ];
 });
+$factory->define(App\Exam::class, function (Faker\Generator $faker) {
+
+    return [
+
+        'name' => $faker->colorName."시험.",
+    ];
+});
 $factory->define(App\CourseStudent::class, function (Faker\Generator $faker) {
 
     return [
         'student_id' => $faker->numberBetween($min = 1, $max = 30),
         'course_id' => $faker->numberBetween($min = 1, $max = 30),
+    ];
+});
+$factory->define(App\ExamStudent::class, function (Faker\Generator $faker) {
+
+    return [
+        'exam_id' => $faker->numberBetween($min = 1, $max = 10),
+        'student_id' => $faker->numberBetween($min = 1, $max = 30),
+        'score' => $faker->numberBetween($min = 50, $max = 100),
     ];
 });

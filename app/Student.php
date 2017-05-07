@@ -16,4 +16,12 @@ class Student extends Model
             ->belongsToMany('App\Course','course_student')
             ->withTimestamps();
     }
+
+    public function exams()
+    {
+        return $this
+            ->belongsToMany('App\Exam','exam_student')
+            ->withPivot('score')
+            ->withTimestamps();
+    }
 }

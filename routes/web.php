@@ -23,5 +23,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('/course','CoursesController');
     Route::resource('/teacher','TeachersController');
     Route::resource('/semester','SemestersController');
+    Route::resource('/exam','ExamsController');
 
 });
