@@ -34,7 +34,7 @@
                             </td>
                             <td>
                                 <button class="btn btn-success">자세히</button>
-                                <a href="/teacher/{{$teacher->id}}/edit"><button class="btn btn-warning">수정</button></a>
+                                <a href="/teacher/{{$teacher->id}}/edit"><button class="btn btn-default">수정</button></a>
 
                                 <form class="form-inline" action="/teacher/{{$teacher->id}}" method="post">
                                     {{method_field('DELETE')}}
