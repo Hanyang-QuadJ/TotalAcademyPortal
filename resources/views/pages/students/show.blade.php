@@ -22,7 +22,7 @@
             <div class="col-md-12">
                 <hr>
                 <h3>시험성적</h3>
-                @foreach($student->exams as $exam)
+                @foreach($student->exams->sortBy('name') as $exam)
                     <div class="col-md-4">
                         <div class="panel panel-default">
                             <div class="panel-heading"><a href="/exam/{{$exam->id}}">{{$exam->name}}</a></div>

@@ -5,7 +5,7 @@
             <h2>{{$teacher->name}} 상세정보</h2>
             <hr>
             <h3>담당강좌</h3>
-            @foreach($teacher->courses as $course)
+            @foreach($teacher->courses->sortBy('name') as $course)
                 <div class="col-md-4">
                     <div class="panel panel-success">
                         <div class="panel-heading"><a href="/semester/{{$course->semester->id}}">{{$course->semester->name}}</a></div>
