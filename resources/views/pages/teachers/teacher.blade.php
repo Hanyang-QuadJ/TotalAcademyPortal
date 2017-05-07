@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div id="page-content-wrapper" style="margin-top: 50px;">
+<div id="page-content-wrapper" class="content-margin">
     <div class="container-fluid">
       <div class="submit-btn">
           <a href="/teacher/create"><button class="btn btn-default btn-block">선생등록</button></a>
