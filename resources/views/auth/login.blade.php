@@ -1,12 +1,32 @@
-@extends('layouts.app')
+<html lang="{{ config('app.locale') }}" class="login-body">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-@section('content')
-<div class="container" style="margin-top: 80px;">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
-                <div class="panel-body">
+    <title>TAP - Login</title>
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="{{ asset('css/carousel.css') }}" rel="stylesheet">
+
+  </head>
+  <body class="login-body">
+    <section class="login">
+      <div class="login-box">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3">
+              <img src="{{ asset('image/logo-big.png')}}" alt="" class="logo-big">
+            </div>
+            <div class="col-md-6 col-md-offset-3">
+              <div class="panel panel-default">
+                <div class="panel-heading">Total Academy Portal Login</div>
+                  <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
@@ -27,10 +47,10 @@
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Password</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <input id="password" type="password" class="form-control" name="password" required>
 
-                                @if ($errors->has('password'))
+                            @if ($errors->has('password'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
@@ -49,20 +69,24 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
+                              <div class="col-md-8 col-md-offset-4">
+                                  <button type="submit" class="btn btn-primary new-btn">
+                                      Login
+                                  </button>
 
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Forgot Your Password?
-                                </a>
-                            </div>
+                                  <a class="btn btn-link" href="{{ route('password.request') }}">
+                                      Forgot Your Password?
+                                  </a>
+                              </div>
                         </div>
-                    </form>
+                      </form>
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
-        </div>
-    </div>
-</div>
-@endsection
+          </div>
+    </section>
+  </body>
+
+</html>

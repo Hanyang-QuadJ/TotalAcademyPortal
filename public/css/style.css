@@ -53,3 +53,22 @@
 .sidebar-nav {
   font-weight: 300;
 }
+
+/*login*/
+.login-body {
+  background-color:#255940;
+}
+.login-box {
+  margin-top: 25vh;
+}
+.new-btn {
+  color: white;
+  background-color: #255940 !important;
+}
+.btn-link {
+  color: #255940 !important;
+}
+.logo-big {
+  height: 282px;
+  padding-bottom: 50px;
+}
