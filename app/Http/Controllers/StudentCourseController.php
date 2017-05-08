@@ -25,4 +25,26 @@ class StudentCourseController extends Controller
         $student->courses()->attach($request->course, ['fee' => $request->fee]);
         return redirect("/student/$student->id");
     }
+
+    public function edit($studentId,$courseId)
+    {
+        $student = Student::findOrFail($studentId);
+        $course = Course::findOrFail($courseId);
+        $fee = $student->courses->where('id',$courseId)[0]->pivot->fee;
+        return view('pages.students.courseEdit', compact('student', 'course','fee'));
+    }
+
+    public function update(Request $request,$studentId,$courseId)
+    {
+        $student = Student::findOrFail($studentId);
+        $student->courses->where('id',$courseId)[0]->pivot->fee = $request->fee;
+        return redirect("/student/$student->id");
+    }
+
+    public function destroy($studentId,$courseId)
+    {
+        $student = Student::findOrFail($studentId);
+        $student->courses()->detach($courseId);
+        return redirect("/student/$student->id");
+    }
 }
