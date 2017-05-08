@@ -4,21 +4,28 @@
         <div class="container-fluid">
             <h2>{{$teacher->name}} 상세정보</h2>
             <hr>
-            <h3>담당강좌</h3>
-            @foreach($teacher->courses->sortBy('name') as $course)
-                <div class="col-md-4">
-                    <div class="panel panel-success">
-                        <div class="panel-heading"><a href="/semester/{{$course->semester->id}}">{{$course->semester->name}}</a></div>
-                        <div class="panel-body">
-                            <a href="/course/{{$course->id}}">{{$course->name}}</a>
-                        </div>
-
-                    </div>
+            <div class="row">
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">{{$teacher->name}} 담당강좌</h4></div>
+                    <!-- Table -->
+                    <table class="table">
+                        <tr>
+                            <th>학기</th>
+                            <th>강좌</th>
+                        </tr>
+                        @foreach($teacher->courses->sortBy('name') as $course)
+                            <tr>
+                                <td><a href="/semester/{{$course->semester->id}}">{{$course->semester->name}}</a></td>
+                                <td><a href="/course/{{$course->id}}">{{$course->name}}</a></td>
+                            </tr>
+                        @endforeach
+                    </table>
                 </div>
-            @endforeach
-
-
-
+            </div>
+            </div>
         </div>
+
     </div>
 @endsection
