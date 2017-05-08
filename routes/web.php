@@ -27,7 +27,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/student/course/edit/{student}/{course}','StudentCourseController@edit');
     Route::post('/student/course/{course}','StudentCourseController@store');
     Route::delete('/student/course/{student}/{course}','StudentCourseController@destroy');
-    Route::patch('/student/course/{student}/{course}','StudentCourseController@update');
+    Route::put('/student/course/update/{student}/{course}','StudentCourseController@update');
     Route::resource('/teacher','TeachersController');
     Route::resource('/semester','SemestersController');
     Route::resource('/exam','ExamsController');

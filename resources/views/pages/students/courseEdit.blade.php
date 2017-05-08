@@ -6,7 +6,7 @@
                 <div class="col-lg-12">
                     <h1>수강료 수정</h1>
                     <hr>
-                    <form method="put" action="/student/course/{{$student->id}}/{{$course->id}}">
+                    <form method="post" action="/student/course/{{$student->id}}/{{$course->id}}">
                         {{method_field('PUT')}}
                         {{ csrf_field() }}
                         <div class="form-group">
