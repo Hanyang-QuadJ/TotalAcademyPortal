@@ -3,7 +3,7 @@
 @section('content')
     <div id="page-content-wrapper" class="content-margin">
         <div class="container-fluid">
-            <h2>시험등록</h2>
+            <h2>{{$student->name}}의 새로운 시험등록</h2>
             <form action="/student/exam/{{$student->id}}" method="post">
                 {{ csrf_field() }}
                 <select name="exam" class="form-control" id="student-examCreate">

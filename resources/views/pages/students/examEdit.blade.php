@@ -4,7 +4,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1>점수 수정</h1>
+                    <h1>{{$student->name}}의 {{$exam->name}} 점수 수정</h1>
                     <hr>
                     <form method="post" action="/student/exam/{{$student->id}}/{{$exam->id}}">
                         {{method_field('PUT')}}

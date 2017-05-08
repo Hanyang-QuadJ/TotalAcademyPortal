@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="submit-btn">
                 <a href="/course/create">
-                    <button class="btn btn-default btn-block">수업등록</button>
+                    <button class="btn btn-default btn-block">강좌등록</button>
                 </a>
             </div>
             <div class="row">
@@ -42,7 +42,7 @@
                                     <form class="form-inline" action="/course/{{$course->id}}" method="post">
                                         {{method_field('DELETE')}}
                                         {{ csrf_field() }}
-                                        <button class="btn btn-danger">퇴원</button>
+                                        <button class="btn btn-danger">삭제</button>
                                     </form>
                                 </td>
                             </tr>

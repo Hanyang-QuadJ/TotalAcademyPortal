@@ -42,7 +42,7 @@
                                     <form class="form-inline" action="/semester/{{$semester->id}}" method="post">
                                         {{method_field('DELETE')}}
                                         {{ csrf_field() }}
-                                        <button class="btn btn-danger">퇴원</button>
+                                        <button class="btn btn-danger">삭제</button>
                                     </form>
                                 </td>
                             </tr>

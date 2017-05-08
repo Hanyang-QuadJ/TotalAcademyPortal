@@ -4,7 +4,7 @@
 <div id="page-content-wrapper" class="content-margin">
     <div class="container-fluid">
       <div class="submit-btn">
-          <a href="/teacher/create"><button class="btn btn-default btn-block">선생등록</button></a>
+          <a href="/teacher/create"><button class="btn btn-default btn-block">강사등록</button></a>
       </div>
         <div class="row">
             <div class="col-lg-12">

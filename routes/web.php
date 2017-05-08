@@ -47,6 +47,14 @@ Route::group(['middleware' => ['auth']], function () {
     Route::PUT('/course/student/{course}/{student}','CourseStudentController@update');
     Route::delete('/course/student/{course}/{student}','CourseStudentController@destroy');
 
+    //ExamStudentController (시험 상세히보기에서 학생추가, 점수 crud)
+    Route::get('/exam/student/create/{exam}','ExamStudentController@create');
+    Route::post('/exam/student/{exam}','ExamStudentController@store');
+    Route::get('/exam/student/edit/{exam}/{student}','ExamStudentController@edit');
+    Route::PUT('/exam/student/{exam}/{student}','ExamStudentController@update');
+    Route::delete('/exam/student/{exam}/{student}','ExamStudentController@destroy');
+
+
 
 
 
