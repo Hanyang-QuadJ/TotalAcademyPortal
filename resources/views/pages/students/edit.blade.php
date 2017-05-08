@@ -16,15 +16,6 @@
                                        placeholder="name"/>
                             </div>
                         </div>
-                        <select name="courses[]" class="form-control" id="student-course-select" multiple="multiple">
-                            @foreach($semesters as $semester)
-                                <optgroup label="{{$semester->name}}">
-                                    @foreach($semester->courses as $course)
-                                        <option value="{{$course->id}}">{{$course->name}}</option>
-                                    @endforeach
-                                </optgroup>
-                            @endforeach
-                        </select>
                         <button type="submit" class="btn btn-primary">수정</button>
                     </form>
 

@@ -4,21 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Exam;
-use App\Semester;
 
 class ExamsController extends Controller
 {
     public function index()
     {
         $exams = Exam::all();
-        $semesters = Semester::all();
-        return view('pages.exams.exam',compact('exams','semesters'));
+        return view('pages.exams.exam',compact('exams'));
     }
 
     public function create()
     {
-        $semesters = Semester::all();
-        return view('pages.exams.create',compact('semesters'));
+        return view('pages.exams.create');
     }
 
     public function store(Request $request)
