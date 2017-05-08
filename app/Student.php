@@ -14,6 +14,7 @@ class Student extends Model
     {
         return $this
             ->belongsToMany('App\Course','course_student')
+            ->withPivot('fee')
             ->withTimestamps();
     }
 

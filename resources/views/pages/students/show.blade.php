@@ -11,7 +11,8 @@
                         <div class="panel-heading"><a
                                     href="/semester/{{$course->semester->id}}">{{$course->semester->name}}</a></div>
                         <div class="panel-body">
-                            <a href="/course/{{$course->id}}">{{$course->name}}</a>
+                            <a href="/course/{{$course->id}}">{{$course->name}}</a><br>
+                            {{$course->pivot->fee}}원
                         </div>
                         <div class="panel-footer pull-right">
                             <a href="/teacher/{{$course->teacher->id}}">{{$course->teacher->name}}</a>
@@ -19,7 +20,7 @@
                     </div>
                 </div>
             @endforeach
-            <a href="student/course/create"><button class="btn btn-success">추가</button></a>
+            <a href="/student/course/create/{{$student->id}}"><button class="btn btn-success">추가</button></a>
 
             <div class="col-md-12">
                 <hr>

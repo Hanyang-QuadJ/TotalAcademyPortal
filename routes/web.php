@@ -21,6 +21,8 @@ Auth::routes();
 Route::group(['middleware' => ['auth']], function () {
   Route::resource('/student','StudentsController');
     Route::resource('/course','CoursesController');
+    Route::get('/student/course/create/{student}','StudentCourseController@create');
+    Route::post('/student/course/{course}','StudentCourseController@store');
     Route::resource('/teacher','TeachersController');
     Route::resource('/semester','SemestersController');
     Route::resource('/exam','ExamsController');

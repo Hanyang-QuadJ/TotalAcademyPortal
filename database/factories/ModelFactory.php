@@ -67,6 +67,7 @@ $factory->define(App\CourseStudent::class, function (Faker\Generator $faker) {
     return [
         'student_id' => $faker->numberBetween($min = 1, $max = 30),
         'course_id' => $faker->numberBetween($min = 1, $max = 30),
+        'fee' => $faker->numberBetween($min = 50, $max = 100),
     ];
 });
 $factory->define(App\ExamStudent::class, function (Faker\Generator $faker) {
