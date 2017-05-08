@@ -4,31 +4,38 @@
         <div class="container-fluid">
             <h2>{{$student->name}} 상세정보</h2>
             <hr>
-            <h3>등록강좌</h3>
+            <h3></h3>
             <div class="row">
-            @foreach($student->courses as $course)
-                <div class="col-md-4">
-                    <div class="panel panel-success">
-                        <div class="panel-heading"><a
-                                    href="/semester/{{$course->semester->id}}">{{$course->semester->name}}</a></div>
-                        <div class="panel-body">
-                            <a href="/course/{{$course->id}}">{{$course->name}}</a><br>
-                            {{$course->pivot->fee}}원
-                        </div>
-                        <div class="panel-footer pull-right">
-                            <a href="/teacher/{{$course->teacher->id}}">{{$course->teacher->name}}</a>
-                        </div>
-                    </div>
+              <div class="col-md-6">
+                <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading">{{$student->name}} 등록강좌 <a href="/student/course/create/{{$student->id}}"><button class="btn new-btn">추가</button></a></div>
+                  <!-- Table -->
+                  <table class="table">
+                    <tr>
+                      <th>학기</th>
+                      <th>강좌</th>
+                      <th>강사</th>
+                      <th>수강료</th>
+                    </tr>
+                    @foreach($student->courses as $course)
+                      <tr>
+                        <td><a href="/semester/{{$course->semester->id}}">{{$course->semester->name}}</a></td>
+                        <td><a href="/course/{{$course->id}}">{{$course->name}}</a></td>
+                        <td><a href="/teacher/{{$course->teacher->id}}">{{$course->teacher->name}}</a></td>
+                        <td>{{$course->pivot->fee}}원</td>
+                      </tr>
+                    @endforeach
+                  </table>
                 </div>
-            @endforeach
+              </div>
             </div>
-            <a href="/student/course/create/{{$student->id}}"><button class="btn btn-success">추가</button></a>
 
           <div class="row">
             <div class="col-md-4">
               <div class="panel panel-default">
               <!-- Default panel contents -->
-              <div class="panel-heading">{{$student->name}}</div>
+              <div class="panel-heading">{{$student->name}} 성적</div>
                 <!-- Table -->
                 <table class="table">
                   <tr>
