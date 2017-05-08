@@ -31,14 +31,14 @@ class StudentCourseController extends Controller
     {
         $student = Student::findOrFail($studentId);
         $course = Course::findOrFail($courseId);
-        $fee = $student->courses->where('id', $courseId)[0]->pivot->fee;
+        $fee = $student->courses->where('id', $courseId)->first()->pivot->fee;
         return view('pages.students.courseEdit', compact('student', 'course', 'fee'));
     }
 
     public function update(Request $request, $studentId, $courseId)
     {
         $student = Student::findOrFail($studentId);
-        $student->courses->where('id', $courseId)[0]->pivot->fee = $request->fee;
+        $student->courses()->updateExistingPivot($courseId, array('fee' => $request->fee));
         return redirect("/student/$student->id");
     }
 
