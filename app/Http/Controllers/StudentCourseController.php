@@ -31,7 +31,7 @@ class StudentCourseController extends Controller
     {
         $student = Student::findOrFail($studentId);
         $course = Course::findOrFail($courseId);
-        $fee = $student->courses->where('id', $courseId)->first()->pivot->fee;
+        $fee = $student->courses->find($courseId)->pivot->fee;
         return view('pages.students.courseEdit', compact('student', 'course', 'fee'));
     }
 
