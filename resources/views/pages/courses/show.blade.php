@@ -13,7 +13,13 @@
                         <div class="panel-body">
                             <a href="/student/{{$student->id}}">{{$student->name}}</a><br>
                             <span>{{$student->pivot->fee}}원</span>
-                            <a href=""><button class="btn btn-primary">수강료수정</button></a>
+                            <a href="/course/student/edit/{{$course->id}}/{{$student->id}}"><button class="btn btn-primary">수강료수정</button></a>
+                            <form class="form-inline"
+                                  action="/course/student/{{$course->id}}/{{$student->id}}" method="post">
+                                {{method_field('DELETE')}}
+                                {{ csrf_field() }}
+                                <button class="btn btn-danger">수강 취소</button>
+                            </form>
 
                         </div>
 

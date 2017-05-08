@@ -35,6 +35,9 @@ Route::group(['middleware' => ['auth']], function () {
     //CourseStudentController (강좌 상세히 보기에서 학생추가, 수강료 crud)
     Route::get('/course/student/create/{course}','CourseStudentController@create');
     Route::post('/course/student/{course}','CourseStudentController@store');
+    Route::get('/course/student/edit/{course}/{student}','CourseStudentController@edit');
+    Route::PUT('/course/student/{course}/{student}','CourseStudentController@update');
+    Route::delete('/course/student/{course}/{student}','CourseStudentController@destroy');
 
 
 });
