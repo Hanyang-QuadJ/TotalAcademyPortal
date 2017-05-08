@@ -8,8 +8,9 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="panel panel-default">
-                <!-- Default panel contents -->
-                <div class="panel-heading">{{$student->name}} 등록강좌 <a href="/student/course/create/{{$student->id}}"><button class="btn new-btn">추가</button></a></div>
+                <div class="panel-heading">
+                  <h4>{{$student->name}} 등록강좌</h4>
+                </div>
                   <!-- Table -->
                   <table class="table">
                     <tr>
@@ -27,7 +28,11 @@
                       </tr>
                     @endforeach
                   </table>
+                  <div class="panel-footer pull-right">
+                      <a href="/student/course/create/{{$student->id}}">강좌추가하기</a>
+                  </div>
                 </div>
+
               </div>
             </div>
 
@@ -35,7 +40,7 @@
             <div class="col-md-4">
               <div class="panel panel-default">
               <!-- Default panel contents -->
-              <div class="panel-heading">{{$student->name}} 성적</div>
+              <div class="panel-heading"><h4>{{$student->name}} 성적</h4></div>
                 <!-- Table -->
                 <table class="table">
                   <tr>
