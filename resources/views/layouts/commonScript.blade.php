@@ -35,3 +35,12 @@
         $('#semester-table').DataTable();
     } );
 </script>
+<script>
+    $(document).ready(function () {
+      $(".sidebar-nav li a").each(function() {
+        if (this.href == window.location.href) {
+            $(this).addClass("selected-nav");
+        }
+      });
+    })
+</script>

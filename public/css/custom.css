@@ -64,7 +64,9 @@
 .sidebar-nav {
   font-weight: 300;
 }
-
+.selected-nav {
+  background-color: rgba(255,255,255,0.2);
+}
 /*login*/
 
 .login-body {
