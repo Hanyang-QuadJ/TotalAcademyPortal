@@ -21,13 +21,6 @@ Auth::routes();
 Route::group(['middleware' => ['auth']], function () {
   Route::resource('/student','StudentsController');
     Route::resource('/course','CoursesController');
-
-
-    Route::get('/student/course/create/{student}','StudentCourseController@create');
-    Route::get('/student/course/edit/{student}/{course}','StudentCourseController@edit');
-    Route::post('/student/course/{course}','StudentCourseController@store');
-    Route::delete('/student/course/{student}/{course}','StudentCourseController@destroy');
-    Route::put('/student/course/update/{student}/{course}','StudentCourseController@update');
     Route::resource('/teacher','TeachersController');
     Route::resource('/semester','SemestersController');
     Route::resource('/exam','ExamsController');
