@@ -26,7 +26,7 @@ class StudentCourseController extends Controller
         return redirect("/student/$student->id");
     }
 
-<<<<<<< Updated upstream
+
     public function edit($studentId,$courseId)
     {
         $student = Student::findOrFail($studentId);
@@ -48,6 +48,5 @@ class StudentCourseController extends Controller
         $student->courses()->detach($courseId);
         return redirect("/student/$student->id");
     }
-=======
->>>>>>> Stashed changes
+
 }

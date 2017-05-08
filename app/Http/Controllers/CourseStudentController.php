@@ -22,5 +22,5 @@ class CourseStudentController extends Controller
         return redirect("/course/$course->id");
     }
 
-    
+
 }
