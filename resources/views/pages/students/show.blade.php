@@ -6,7 +6,7 @@
             <hr>
             <h3></h3>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-8">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4>{{$student->name}} 등록강좌</h4>
@@ -45,11 +45,7 @@
                             <a href="/student/course/create/{{$student->id}}">강좌추가하기</a>
                         </div>
                     </div>
-
                 </div>
-            </div>
-
-            <div class="row">
                 <div class="col-md-4">
                     <div class="panel panel-default">
                         <!-- Default panel contents -->
@@ -70,8 +66,6 @@
                     </div>
                 </div>
             </div>
-
-
-        </div>
+          </div>
     </div>
 @endsection
