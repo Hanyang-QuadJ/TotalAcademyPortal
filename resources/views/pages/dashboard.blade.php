@@ -7,5 +7,6 @@
         <span class="sr-only">45% Complete</span>
       </div>
     </div>
+    <div id="chart_div"></div>
 </div>
 @endsection

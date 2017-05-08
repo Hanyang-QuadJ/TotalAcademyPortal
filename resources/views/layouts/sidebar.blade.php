@@ -2,9 +2,10 @@
 <div id="sidebar-wrapper">
     <ul class="sidebar-nav">
         <li class="sidebar-brand">
-            <a href="/">
-                Total Academy Portal
-            </a>
+            <a>Total Academy Portal</a>
+        </li>
+        <li>
+            <a href="/">대시보드</a>
         </li>
         <li>
             <a href="/student">학생</a>
