@@ -55,17 +55,34 @@
                             <tr>
                                 <th>시험</th>
                                 <th>성적</th>
+                                <th>관리</th>
                             </tr>
                             @foreach($student->exams->sortBy('name') as $exam)
                                 <tr>
                                     <td><a href="/exam/{{$exam->id}}">{{$exam->name}}</a></td>
-                                    <td>{{$exam->pivot->score}}점</td>
+                                    <td>{{$exam->pivot->score}}점
+
+                                    </td>
+                                    <td>
+                                        <a href="/student/exam/edit/{{$student->id}}/{{$exam->id}}"><button class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i></button></a>
+                                        <form class="form-inline"
+                                              action="/student/exam/{{$student->id}}/{{$exam->id}}" method="post">
+                                            {{method_field('DELETE')}}
+                                            {{ csrf_field() }}
+                                            <button class="btn btn-sm btn-danger"><i class="fa fa-minus-circle"></i>
+                                            </button>
+                                        </form>
+                                    </td>
+
                                 </tr>
                             @endforeach
                         </table>
+                        <div class="panel-footer pull-right">
+                            <a href="/student/exam/create/{{$student->id}}">시험추가하기</a>
+                        </div>
                     </div>
                 </div>
             </div>
-          </div>
+        </div>
     </div>
 @endsection
