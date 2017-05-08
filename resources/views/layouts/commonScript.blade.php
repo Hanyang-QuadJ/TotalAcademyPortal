@@ -37,8 +37,10 @@
 </script>
 <script>
     $(document).ready(function () {
+      var currentURL = (window.location.href).split('/');
+      console.log(currentURL);
       $(".sidebar-nav li a").each(function() {
-        if (this.href == window.location.href) {
+        if (this.href == "http://localhost:8000/" + currentURL[3]) {
             $(this).addClass("selected-nav");
         }
       });
