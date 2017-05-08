@@ -20,6 +20,11 @@
                             <option value="{{$semester->id}}">{{$semester->name}}</option>
                         @endforeach
                     </select>
+                    <select name="teacher_id" class="form-control" id="course-teacher-select">
+                        @foreach($teachers as $teacher)
+                            <option value="{{$teacher->id}}">{{$teacher->name}}</option>
+                        @endforeach
+                    </select>
                     <button type="submit" class="btn new-btn">등록</button>
                 </form>
             </div>
@@ -33,6 +38,12 @@
         $(document).ready(function () {
             $('#course-semester-create-select').select2();
             $('#course-semester-create-select').select2().maximizeSelect2Height();
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#course-teacher-select').select2();
+            $('#course-teacher-select').select2().maximizeSelect2Height();
         });
     </script>
 @endsection

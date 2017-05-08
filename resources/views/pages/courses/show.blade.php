@@ -11,12 +11,20 @@
                     <div class="panel panel-success">
 
                         <div class="panel-body">
-                            <a href="/student/{{$student->id}}">{{$student->name}}</a>
+                            <a href="/student/{{$student->id}}">{{$student->name}}</a><br>
+                            <span>{{$student->pivot->fee}}원</span>
+                            <a href=""><button class="btn btn-primary">수강료수정</button></a>
+
                         </div>
 
                     </div>
                 </div>
             @endforeach
+            <div class="col-md-12">
+
+                <a href="/course/student/create/{{$course->id}}"><button href="" class="btn btn-warning">학생추가</button></a>
+
+            </div>
 
 
 
