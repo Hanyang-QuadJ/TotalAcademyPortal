@@ -15,7 +15,7 @@
                                 <input type="text" name="name" class="form-control" placeholder="이름을 입력하세요">
                             </div>
                         </div>
-                        <select name="courses[]" class="form-control" id="student-course-select2" data-placeholder="반을 선택하세요" multiple="multiple">
+                        <select name="course" class="form-control" id="student-course-select2" data-placeholder="반을 선택하세요">
                             @foreach($semesters as $semester)
                                 <optgroup label="{{$semester->name}}">
                                     @foreach($semester->courses as $course)
@@ -24,6 +24,10 @@
                                 </optgroup>
                             @endforeach
                         </select>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                            <input type="text" name="fee" class="form-control" placeholder="수강료를 입력하세요">
+                        </div>
                         <button type="submit" class="btn new-btn">등록</button>
                     </form>
                 </div>

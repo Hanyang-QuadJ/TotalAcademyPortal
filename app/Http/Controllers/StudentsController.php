@@ -30,7 +30,7 @@ class StudentsController extends Controller
         //
         $student = new Student($request->all());
         $student->save();
-        $student->courses()->sync($request->courses,false);
+        $student->courses()->attach($request->course, ['fee' => $request->fee]);
         return redirect('/student');
     }
 
