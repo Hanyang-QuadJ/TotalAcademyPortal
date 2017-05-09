@@ -26,6 +26,11 @@ $factory->define(App\Student::class, function (Faker\Generator $faker) {
 
     return [
         'name' => $faker->name.".학생",
+        'school' => $faker->colorName.".학교",
+        'reason' => $faker->locale,
+        'class' => $faker->company,
+        'parentPhone' => $faker->phoneNumber,
+        'studentPhone' => $faker->phoneNumber,
     ];
 });
 $factory->define(App\Academy::class, function (Faker\Generator $faker) {
@@ -67,7 +72,7 @@ $factory->define(App\CourseStudent::class, function (Faker\Generator $faker) {
     return [
         'student_id' => $faker->numberBetween($min = 1, $max = 30),
         'course_id' => $faker->numberBetween($min = 1, $max = 30),
-        'fee' => $faker->numberBetween($min = 50, $max = 100),
+        'fee' => $faker->numberBetween($min = 100000, $max = 900000),
     ];
 });
 $factory->define(App\ExamStudent::class, function (Faker\Generator $faker) {

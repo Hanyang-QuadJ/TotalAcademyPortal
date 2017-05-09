@@ -28,6 +28,26 @@
                             <div class="input-group-addon"><i class="fa fa-user"></i></div>
                             <input type="text" name="fee" class="form-control" placeholder="수강료를 입력하세요">
                         </div>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-graduation-cap"></i></div>
+                            <input type="text" name="school" class="form-control" placeholder="학교를 입력하세요">
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-cubes"></i></div>
+                            <input type="text" name="class" class="form-control" placeholder="게열을 입력하세요">
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-question-circle-o"></i></div>
+                            <input type="text" name="reason" class="form-control" placeholder="입학동기를 입력하세요">
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-mobile"></i></div>
+                            <input type="text" name="parentPhone" class="form-control" placeholder="부모님 휴대폰 번호를 입력하세요">
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-mobile"></i></div>
+                            <input type="text" name="studentPhone" class="form-control" placeholder="학생 휴대폰 번호를 입력하세요">
+                        </div>
                         <button type="submit" class="btn new-btn">등록</button>
                     </form>
                 </div>

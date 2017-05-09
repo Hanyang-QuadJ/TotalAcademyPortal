@@ -14,16 +14,24 @@
                         <thead>
                         <tr>
                             <th>이름</th>
-                            <th>등록날짜</th>
-                            <th>최종수정일</th>
+                            <th>학교</th>
+                            <th>계열</th>
+                            <th>동기</th>
+                            <th>부모HP</th>
+                            <th>학생HP</th>
+
                             <th>관리</th>
                         </tr>
                         </thead>
                         <tfoot>
                         <tr>
                             <th>이름</th>
-                            <th>등록날짜</th>
-                            <th>최종수정일</th>
+                            <th>학교</th>
+                            <th>계열</th>
+                            <th>동기</th>
+                            <th>부모HP</th>
+                            <th>학생HP</th>
+
                             <th>관리</th>
                         </tr>
                         </tfoot>
@@ -32,14 +40,12 @@
                             <tr>
 
                                 <td>{{$student->name}}</td>
-                                <td>
-                                    {{$student->created_at->format('Y-m-d')}}
+                                <th>{{$student->school}}</th>
+                                <th>{{$student->class}}</th>
+                                <th>{{$student->reason}}</th>
+                                <th>{{$student->parentPhone}}</th>
+                                <th>{{$student->studentPhone}}</th>
 
-                                </td>
-                                <td>
-                                    {{$student->updated_at->format('Y-m-d')}}
-
-                                </td>
                                 <td>
                                     <a href="/student/{{$student->id}}">
                                         <button class="btn btn-success">자세히</button>

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Student extends Model
 {
     protected $fillable = [
-        'name',
+        'name','school','reason','class','parentPhone','studentPhone',
     ];
 
     public function courses()

@@ -15,7 +15,7 @@ class CreateCourseStudentTable extends Migration
     {
         Schema::create('course_student', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('fee')->unsigned();
+            $table->double('fee',8,2)->unsigned();
             $table->integer('student_id')->unsigned();
             $table->integer('course_id')->unsigned();
 

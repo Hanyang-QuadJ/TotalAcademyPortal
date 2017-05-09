@@ -4,7 +4,16 @@
         <div class="container-fluid">
             <h2>{{$student->name}} 상세정보</h2>
             <hr>
-            <h3></h3>
+            <label>학교</label>
+            <p>{{$student->school}}</p>
+            <label>동기</label>
+            <p>{{$student->reason}}</p>
+            <label>계열</label>
+            <p>{{$student->class}}</p>
+            <label>부모님 핸드폰</label>
+            <p>{{$student->parentPhone}}</p>
+            <label>학생 핸드폰</label>
+            <p>{{$student->studentPhone}}</p>
             <div class="row">
                 <div class="col-md-8">
                     <div class="panel panel-default">
