@@ -16,6 +16,41 @@
                                        placeholder="name"/>
                             </div>
                         </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                <input type="text" name="school" value="{{$student->school}}" class="form-control"
+                                       placeholder="name"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                <input type="text" name="class" value="{{$student->class}}" class="form-control"
+                                       placeholder="name"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                <input type="text" name="reason" value="{{$student->reason}}" class="form-control"
+                                       placeholder="name"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                <input type="text" name="parentPhone" value="{{$student->parentPhone}}" class="form-control"
+                                     />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                <input type="text" name="studentPhone" value="{{$student->studentPhone}}" class="form-control"
+                                    />
+                            </div>
+                        </div>
                         <button type="submit" class="btn btn-primary">수정</button>
                     </form>
 

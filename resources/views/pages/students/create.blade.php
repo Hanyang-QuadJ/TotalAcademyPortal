@@ -15,7 +15,7 @@
                                 <input type="text" name="name" class="form-control" placeholder="이름을 입력하세요">
                             </div>
                         </div>
-                        <select name="course" class="form-control" id="student-course-select2" data-placeholder="반을 선택하세요">
+                        <select name="course" class="form-control" id="student-course-select2">
                             @foreach($semesters as $semester)
                                 <optgroup label="{{$semester->name}}">
                                     @foreach($semester->courses as $course)
@@ -61,6 +61,8 @@
         $(document).ready(function () {
             $('#student-course-select2').select2();
             $('#student-course-select2').select2().maximizeSelect2Height();
+            $('#student-course-select2').select2({  placeholder: "반을 등록하세요.",allowClear:true
+                });
         });
     </script>
 @endsection
