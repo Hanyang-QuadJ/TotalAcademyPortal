@@ -42,6 +42,9 @@ class StudentCourseController extends Controller
         return redirect("/student/$student->id");
     }
 
+
+
+
     public function destroy($studentId, $courseId)
     {
         $student = Student::findOrFail($studentId);

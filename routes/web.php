@@ -54,6 +54,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::PUT('/exam/student/{exam}/{student}','ExamStudentController@update');
     Route::delete('/exam/student/{exam}/{student}','ExamStudentController@destroy');
 
+    Route::get('/student/course/transfer/{student}/{course}','StudentTransferController@transfer');
+    Route::PUT('/student/course/transferUpdate/{student}/{course}','StudentTransferController@transferUpdate');
+
 
 
 

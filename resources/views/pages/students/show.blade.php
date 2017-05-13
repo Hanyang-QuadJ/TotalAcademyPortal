@@ -46,7 +46,9 @@
                                             {{ csrf_field() }}
                                             <button class="btn btn-danger">수강 취소</button>
                                         </form>
+                                        <a href="/student/course/transfer/{{$student->id}}/{{$course->id}}"><button class="btn btn-warning">반이동</button></a>
                                     </td>
+
                                 </tr>
                             @endforeach
                         </table>
