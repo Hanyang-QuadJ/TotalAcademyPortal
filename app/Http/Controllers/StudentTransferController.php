@@ -21,7 +21,6 @@ class StudentTransferController extends Controller
 
     public function transferUpdate(Request $request, $studentId, $courseId){
         $student = Student::findOrFail($studentId);
-        $dcourse = $student
         $student->courses()->detach($courseId);
         $student->courses()->attach($request->courses, ['fee' => $request->fee]);
 
