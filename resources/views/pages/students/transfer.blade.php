@@ -4,6 +4,7 @@
     <div id="page-content-wrapper" class="content-margin">
         <div class="container-fluid">
             <h2>강좌 이동</h2>
+            <h3>현재 반 : {{$course->name}}</h3>
             <form action="/student/course/transferUpdate/{{$student->id}}/{{$course->id}}" method="post">
                 {{method_field('PUT')}}
                 {{ csrf_field() }}
