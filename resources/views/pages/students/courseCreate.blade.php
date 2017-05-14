@@ -42,12 +42,22 @@
             var url = "/data/course/fee";
 
             var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-
+            $.ajax({
+                data: {_token: CSRF_TOKEN},
+                type: "POST",
+                dataType: 'JSON',
+                url: url+"/"+$("#student-courseCreate").val(),
+                success: function (response) {
+                    $("#fee").val(response.fee);
+                },
+                error: function (response) {
+                    console.log('Error:', response);
+                }
+            });
             //display modal form for task editing
             $('#student-courseCreate').change(function () {
                 $.ajax({
                     data: {_token: CSRF_TOKEN},
-//                    contentType: "application/json; charset=utf-8",
                     type: "POST",
                     dataType: 'JSON',
                     url: url+"/"+$(this).val(),
