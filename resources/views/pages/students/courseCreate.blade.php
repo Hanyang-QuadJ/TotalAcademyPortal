@@ -20,7 +20,7 @@
                 </select>
                 <label>수강료</label>
 
-                <input class="form-control" name="fee" type="text">
+                <input class="form-control" id="fee" name="fee" type="text">
                 <button class="btn btn-primary" type="submit">제출</button>
             </form>
 
@@ -34,6 +34,31 @@
         $(document).ready(function () {
             $('#student-courseCreate').select2();
             $('#student-courseCreate').select2().maximizeSelect2Height();
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+
+            var url = "/data/course/fee";
+
+            var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+
+            //display modal form for task editing
+            $('#student-courseCreate').change(function () {
+                $.ajax({
+                    data: {_token: CSRF_TOKEN},
+//                    contentType: "application/json; charset=utf-8",
+                    type: "POST",
+                    dataType: 'JSON',
+                    url: url+"/"+$(this).val(),
+                    success: function (response) {
+                        $("#fee").val(response.fee);
+                    },
+                    error: function (response) {
+                        console.log('Error:', response);
+                    }
+                });
+            });
         });
     </script>
 @endsection

@@ -57,6 +57,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/student/course/transfer/{student}/{course}','StudentTransferController@transfer');
     Route::PUT('/student/course/transferUpdate/{student}/{course}','StudentTransferController@transferUpdate');
 
+    Route::post('/data/course/fee/{course}','DatabaseController@courseFee');
+
 
 
 
