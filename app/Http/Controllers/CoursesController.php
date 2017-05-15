@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Course;
 use App\Semester;
 use App\Teacher;
+use App\History;
 
 class CoursesController extends Controller
 {
@@ -27,7 +28,10 @@ class CoursesController extends Controller
     {
         //
         $course = new Course($request->all());
+        $history = new History();
+        $history->name = $request->name." 강좌를 등록하였습니다";
         $course->save();
+        $history->save();
         return redirect('/course');
     }
 

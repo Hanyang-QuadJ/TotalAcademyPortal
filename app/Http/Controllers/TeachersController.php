@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Teacher;
+use App\History;
 
 class TeachersController extends Controller
 {
@@ -42,6 +43,10 @@ class TeachersController extends Controller
         //
         $teacher = new Teacher($request->all());
         $teacher->save();
+        $history = new History();
+        $history->name = $teacher->name." 강사를 등록하였습니다.";
+        $history->save();
+
         return redirect('/teacher');
     }
 

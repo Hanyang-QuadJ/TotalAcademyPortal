@@ -25,6 +25,12 @@
                             <option value="{{$teacher->id}}">{{$teacher->name}}</option>
                         @endforeach
                     </select>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                            <input type="text" name="fee" class="form-control" placeholder="수강료 입력하세요">
+                        </div>
+                    </div>
                     <button type="submit" class="btn new-btn">등록</button>
                 </form>
             </div>
