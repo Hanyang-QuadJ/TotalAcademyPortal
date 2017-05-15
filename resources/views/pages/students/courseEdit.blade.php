@@ -12,7 +12,7 @@
                         <div class="form-group">
                             <div class="input-group">
                                 <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                <input type="text" name="fee" value="{{$fee}}" class="form-control"
+                                <input type="text" name="fee" value="{{$course->fee}}" class="form-control"
                                        placeholder="수강료"/>
                             </div>
                         </div>

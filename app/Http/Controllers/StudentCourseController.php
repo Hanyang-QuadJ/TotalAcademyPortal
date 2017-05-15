@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\History;
 use Illuminate\Http\Request;
 use App\Course;
 use App\Student;
@@ -22,7 +23,13 @@ class StudentCourseController extends Controller
     public function store(Request $request, $id)
     {
         $student = Student::findOrFail($id);
+
         $student->courses()->attach($request->course, ['fee' => $request->fee]);
+
+        $history = new History();
+        $course = Course::findOrFail($request->course);
+        $history->name = $student->name."을 " .$course->name."에 등록하였습니다.";
+        $history->save();
         return redirect("/student/$student->id");
     }
 

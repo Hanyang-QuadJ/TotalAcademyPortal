@@ -24,6 +24,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('/teacher','TeachersController');
     Route::resource('/semester','SemestersController');
     Route::resource('/exam','ExamsController');
+    Route::resource('/history','HistoryController');
 
     //StudentCourseController (학생 자세히 보기에서 강좌추가, 수강료 crud)
     Route::get('/student/course/create/{student}','StudentCourseController@create');

@@ -22,6 +22,9 @@
         <li>
             <a href="/exam">시험</a>
         </li>
+        <li>
+            <a href="/history">히스토리</a>
+        </li>
 
     </ul>
 </div>

@@ -20,7 +20,10 @@
                 </select>
                 <label>수강료</label>
 
+
                 <input class="form-control" id="fee" name="fee" type="text">
+
+
                 <button class="btn btn-primary" type="submit">제출</button>
             </form>
 

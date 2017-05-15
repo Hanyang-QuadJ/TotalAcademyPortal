@@ -6,6 +6,8 @@ use App\Semester;
 use Illuminate\Http\Request;
 use App\Student;
 use App\Course;
+use App\History;
+use phpDocumentor\Reflection\Types\String_;
 
 class StudentsController extends Controller
 {
@@ -29,7 +31,10 @@ class StudentsController extends Controller
     {
         //
         $student = new Student($request->all());
+        $history = new History();
+        $history->name = $request->name." 학생을 등록하였습니다";
         $student->save();
+        $history->save();
         $student->courses()->attach($request->course, ['fee' => $request->fee]);
         return redirect('/student');
     }
@@ -52,8 +57,12 @@ class StudentsController extends Controller
     {
         //
         $student = Student::findOrFail($id);
+        $history = new History();
+        $history->name = $student->name." 학생정보를 수정하였습니다.";
         $student->update($request->all());
         $student->courses()->sync($request->courses);
+
+        $history->save();
         return redirect('/student');
     }
 
