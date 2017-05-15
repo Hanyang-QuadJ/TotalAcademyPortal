@@ -28,7 +28,7 @@ class StudentCourseController extends Controller
 
         $history = new History();
         $course = Course::findOrFail($request->course);
-        $history->name = $student->name."을 " .$course->name."에 등록하였습니다.";
+        $history->name = $student->name." 학생을 " .$course->name."에 등록하였습니다.";
         $history->save();
         return redirect("/student/$student->id");
     }
