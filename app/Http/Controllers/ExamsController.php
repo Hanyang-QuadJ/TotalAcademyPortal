@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Exam;
-
+use App\History;
 class ExamsController extends Controller
 {
     public function index()
     {
         $exams = Exam::all();
-        return view('pages.exams.exam',compact('exams'));
+        $histories = History::all();
+        return view('pages.exams.exam',compact('exams','histories'));
     }
 
     public function create()
@@ -29,8 +30,9 @@ class ExamsController extends Controller
     public function show($id)
     {
         //
+        $histories = History::all();
         $exam = Exam::findOrFail($id);
-        return view('pages.exams.show',compact('exam'));
+        return view('pages.exams.show',compact('exam','histories'));
     }
 
     public function edit($id)

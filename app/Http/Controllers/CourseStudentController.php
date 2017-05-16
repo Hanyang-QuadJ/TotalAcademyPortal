@@ -5,14 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Student;
 use App\Course;
-
+use App\History;
 class CourseStudentController extends Controller
 {
     //
     public function create($id){
+        $histories = History::all();
         $course = Course::findOrFail($id);
         $students = Student::all();
-        return view('pages.courses.studentCreate',compact('course','students'));
+        return view('pages.courses.studentCreate',compact('course','students','histories'));
 
     }
     public function store(Request $request, $id)

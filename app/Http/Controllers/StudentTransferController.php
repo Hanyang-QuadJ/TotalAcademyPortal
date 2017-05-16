@@ -17,7 +17,8 @@ class StudentTransferController extends Controller
         $courses = Course::all();
         $course = Course::findOrFail($courseId);
         $semesters = Semester::all();
-        return view('pages.students.transfer',compact('student','semesters','courses','course'));
+        $histories = History::all();
+        return view('pages.students.transfer',compact('student','semesters','courses','course','histories'));
 
     }
 

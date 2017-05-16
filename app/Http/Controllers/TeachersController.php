@@ -16,8 +16,10 @@ class TeachersController extends Controller
     public function index()
     {
         //
+
+        $histories = History::all();
         $teachers = Teacher::all();
-        return view('pages.teachers.teacher',compact('teachers'));
+        return view('pages.teachers.teacher',compact('teachers','histories'));
 
     }
 
@@ -59,8 +61,9 @@ class TeachersController extends Controller
     public function show($id)
     {
         //
+        $histories = History::all();
         $teacher = Teacher::findOrFail($id);
-        return view('pages.teachers.show',compact('teacher'));
+        return view('pages.teachers.show',compact('teacher','histories'));
     }
 
     /**

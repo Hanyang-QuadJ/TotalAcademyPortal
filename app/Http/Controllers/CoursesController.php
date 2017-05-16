@@ -12,9 +12,11 @@ class CoursesController extends Controller
 {
     public function index()
     {
+
+        $histories = History::all();
         $courses = Course::all();
         $semesters = Semester::all();
-        return view('pages.courses.course',compact('courses','semesters'));
+        return view('pages.courses.course',compact('courses','semesters','histories'));
     }
 
     public function create()
@@ -38,8 +40,9 @@ class CoursesController extends Controller
     public function show($id)
     {
         //
+        $histories = History::all();
         $course = Course::findOrFail($id);
-        return view('pages.courses.show',compact('course'));
+        return view('pages.courses.show',compact('course','histories'));
     }
 
     public function edit($id)

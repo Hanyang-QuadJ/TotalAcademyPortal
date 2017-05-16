@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Exam;
 use App\Student;
+use App\History;
 
 class StudentExamController extends Controller
 {
@@ -12,8 +13,9 @@ class StudentExamController extends Controller
     public function create($id)
     {
         $exams = Exam::all();
+        $histories = History::all();
         $student = Student::findOrFail($id);
-        return view('pages.students.examCreate', compact('exams', 'student'));
+        return view('pages.students.examCreate', compact('exams', 'student','histories'));
 
     }
 

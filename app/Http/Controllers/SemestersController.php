@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Semester;
-
+use App\History;
 class SemestersController extends Controller
 {
     public function index()
     {
+        $histories = History::all();
         $semesters = Semester::all();
-        return view('pages.semesters.semester',compact('semesters'));
+        return view('pages.semesters.semester',compact('semesters','histories'));
     }
 
     public function create()
@@ -30,8 +31,9 @@ class SemestersController extends Controller
     public function show($id)
     {
         //
+        $histories = History::all();
         $semester = Semester::findOrFail($id);
-        return view('pages.semesters.show',compact('semester'));
+        return view('pages.semesters.show',compact('semester','histories'));
     }
 
     public function edit($id)

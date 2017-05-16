@@ -17,7 +17,8 @@ class StudentCourseController extends Controller
         $courses = Course::all();
         $student = Student::findOrFail($id);
         $semesters = Semester::all();
-        return view('pages.students.courseCreate', compact('courses', 'student', 'semesters'));
+        $histories = History::all();
+        return view('pages.students.courseCreate', compact('courses', 'student', 'semesters','histories'));
 
     }
 
@@ -44,10 +45,11 @@ class StudentCourseController extends Controller
 
     public function edit($studentId, $courseId)
     {
+        $histories = History::all();
         $student = Student::findOrFail($studentId);
         $course = Course::findOrFail($courseId);
         $fee = $student->courses->find($courseId)->pivot->fee;
-        return view('pages.students.courseEdit', compact('student', 'course', 'fee'));
+        return view('pages.students.courseEdit', compact('student', 'course', 'fee','histories'));
     }
 
     public function update(Request $request, $studentId, $courseId)

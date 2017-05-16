@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Semester;
 use Illuminate\Http\Request;
 use App\Student;
@@ -16,8 +15,9 @@ class StudentsController extends Controller
     public function index()
     {
         //
+        $histories = History::all();
         $students = Student::all();
-        return view('pages.students.student',compact('students'));
+        return view('pages.students.student',compact('students','histories'));
     }
 
     public function create()
@@ -49,15 +49,17 @@ class StudentsController extends Controller
     public function show($id)
     {
         $student = Student::findOrFail($id);
-        return view('pages.students.show',compact('student'));
+        $histories = History::all();
+        return view('pages.students.show',compact('student','histories'));
     }
 
     public function edit($id)
     {
         $student = Student::findOrFail($id);
         $semesters = Semester::all();
+        $histories = History::all();
         $courses = Course::all();
-        return view('pages.students.edit',compact('courses','semesters','student'));
+        return view('pages.students.edit',compact('courses','semesters','student','histories'));
     }
 
     public function update(Request $request, $id)

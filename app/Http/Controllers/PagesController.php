@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use View;
-
+use App\History;
 class PagesController extends Controller
 {
     public function index() {
-      return view('pages.dashboard');
+        $histories = History::all();
+        return view('pages.dashboard',compact('histories'));
     }
 
     // public function student() {
