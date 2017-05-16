@@ -16,7 +16,7 @@
                             <th>이름</th>
                             <th>학교</th>
                             <th>계열</th>
-                            <th>동기</th>
+
                             <th>부모HP</th>
                             <th>학생HP</th>
 
@@ -28,7 +28,7 @@
                             <th>이름</th>
                             <th>학교</th>
                             <th>계열</th>
-                            <th>동기</th>
+
                             <th>부모HP</th>
                             <th>학생HP</th>
 
@@ -42,7 +42,7 @@
                                 <td>{{$student->name}}</td>
                                 <th>{{$student->school}}</th>
                                 <th>{{$student->class}}</th>
-                                <th>{{$student->reason}}</th>
+
                                 <th>{{$student->parentPhone}}</th>
                                 <th>{{$student->studentPhone}}</th>
 

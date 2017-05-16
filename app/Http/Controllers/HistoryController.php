@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\History;
-use App\Student;
+
+
 
 class HistoryController extends Controller
 {

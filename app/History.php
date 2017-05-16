@@ -11,4 +11,6 @@ class History extends Model
         'name',
     ];
 
+
+
 }

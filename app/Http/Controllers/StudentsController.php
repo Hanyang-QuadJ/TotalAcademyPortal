@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Student;
 use App\Course;
 use App\History;
+use Illuminate\Support\Facades\Auth;
 use phpDocumentor\Reflection\Types\String_;
 
 class StudentsController extends Controller
@@ -31,9 +32,13 @@ class StudentsController extends Controller
     {
         //
         $student = new Student($request->all());
-        $history = new History();
-        $history->name = $request->name." 학생을 등록하였습니다";
         $student->save();
+        $history = new History();
+        $history->type = "등록";
+        $history->subject = Auth::user()->name;
+        $history->object_type = "student";
+        $history->object_id = $student->id;
+        $history->object_name = $student->name;
         $history->save();
         $student->courses()->attach($request->course, ['fee' => $request->fee]);
         return redirect('/student');
@@ -57,11 +62,13 @@ class StudentsController extends Controller
     {
         //
         $student = Student::findOrFail($id);
-        $history = new History();
-        $history->name = $student->name." 학생정보를 수정하였습니다.";
         $student->update($request->all());
-        $student->courses()->sync($request->courses);
-
+        $history = new History();
+        $history->type = "수정";
+        $history->subject = Auth::user()->name;
+        $history->object_type = "student";
+        $history->object_id = $student->id;
+        $history->object_name = $student->name;
         $history->save();
         return redirect('/student');
     }
@@ -70,7 +77,11 @@ class StudentsController extends Controller
     {
         $student = Student::findOrFail($id);
         $history = new History();
-        $history->name = $student->name." 학생을 퇴원처리 하였습니다.";
+        $history->type = "삭제";
+        $history->subject = Auth::user()->name;
+        $history->object_type = "student";
+        $history->object_id = $student->id;
+        $history->object_name = $student->name;
         $history->save();
         Student::destroy($id);
         return redirect('/student');

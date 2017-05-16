@@ -15,7 +15,11 @@ class CreateHistoriesTable extends Migration
     {
         Schema::create('histories', function (Blueprint $table) {
             $table->increments('id');
-            $table->String('name');
+            $table->String('type');
+            $table->String('subject');
+            $table->String('object_type');
+            $table->integer('object_id')->unsigned();
+            $table->String('object_name');
             $table->timestamps();
         });
 
