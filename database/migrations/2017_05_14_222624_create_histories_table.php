@@ -18,6 +18,7 @@ class CreateHistoriesTable extends Migration
             $table->String('name');
             $table->timestamps();
         });
+
     }
 
     /**
@@ -28,5 +29,6 @@ class CreateHistoriesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('histories');
+
     }
 }

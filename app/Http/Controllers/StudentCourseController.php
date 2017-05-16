@@ -39,6 +39,9 @@ class StudentCourseController extends Controller
         $student = Student::findOrFail($studentId);
         $course = Course::findOrFail($courseId);
         $fee = $student->courses->find($courseId)->pivot->fee;
+        $history = new History();
+        $history->name = $student->name. " 학생의 ".$course->name. " 강좌 수강료를 수정하였습니다.";
+        $history->save();
         return view('pages.students.courseEdit', compact('student', 'course', 'fee'));
     }
 

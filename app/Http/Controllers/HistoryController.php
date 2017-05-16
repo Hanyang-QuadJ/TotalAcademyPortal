@@ -18,6 +18,7 @@ class HistoryController extends Controller
         //
         $histories = History::all();
         return view('pages.history',compact('histories'));
+
     }
 
     /**
