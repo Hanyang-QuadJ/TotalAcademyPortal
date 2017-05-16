@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Course;
 use App\Student;
 use App\Semester;
+use Illuminate\Support\Facades\Auth;
 
 class StudentCourseController extends Controller
 {
@@ -25,10 +26,17 @@ class StudentCourseController extends Controller
         $student = Student::findOrFail($id);
 
         $student->courses()->attach($request->course, ['fee' => $request->fee]);
+        $course = Course::findOrFail($request->course);
 
         $history = new History();
-        $course = Course::findOrFail($request->course);
-        $history->name = $student->name." 학생을 " .$course->name."에 등록하였습니다.";
+        $history->type ="강좌 등록";
+        $history->subject = Auth::user()->name;
+        $history->object_type = "student";
+        $history->object_type2 ="course";
+        $history->object_id = $student->id;
+        $history->object_id2 = $course->id;
+        $history->object_name = $student->name;
+        $history->object_desc = $course->name;
         $history->save();
         return redirect("/student/$student->id");
     }
@@ -39,9 +47,6 @@ class StudentCourseController extends Controller
         $student = Student::findOrFail($studentId);
         $course = Course::findOrFail($courseId);
         $fee = $student->courses->find($courseId)->pivot->fee;
-        $history = new History();
-        $history->name = $student->name. " 학생의 ".$course->name. " 강좌 수강료를 수정하였습니다.";
-        $history->save();
         return view('pages.students.courseEdit', compact('student', 'course', 'fee'));
     }
 
@@ -49,6 +54,18 @@ class StudentCourseController extends Controller
     {
         $student = Student::findOrFail($studentId);
         $student->courses()->updateExistingPivot($courseId, array('fee' => $request->fee));
+        $course = Course::findOrFail($courseId);
+        $history = new History();
+        $history->type = "수강료 수정";
+        $history->subject =Auth::user()->name;
+        $history->object_type = "student";
+        $history->object_type2 = "course";
+        $history->object_id = $student->id;
+        $history->object_id2 = $course->id;
+        $history->object_name = $student->name;
+        $history->object_desc = $course->name;
+        $history->save();
+
         return redirect("/student/$student->id");
     }
 
@@ -59,6 +76,16 @@ class StudentCourseController extends Controller
     {
         $student = Student::findOrFail($studentId);
         $student->courses()->detach($courseId);
+        $course = Course::findOrFail($courseId);
+        $history = new History();
+        $history->type= "수강 취소";
+        $history->subject = Auth::user()->name;
+        $history->object_type = "student";
+        $history->object_id = $student->id;
+        $history->object_id2 = $course->id;
+        $history->object_name = $student->name;
+        $history->object_desc = $course->name;
+        $history->save();
         return redirect("/student/$student->id");
     }
 

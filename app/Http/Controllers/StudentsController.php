@@ -8,6 +8,7 @@ use App\Student;
 use App\Course;
 use App\History;
 use Illuminate\Support\Facades\Auth;
+
 use phpDocumentor\Reflection\Types\String_;
 
 class StudentsController extends Controller
@@ -39,6 +40,7 @@ class StudentsController extends Controller
         $history->object_type = "student";
         $history->object_id = $student->id;
         $history->object_name = $student->name;
+
         $history->save();
         $student->courses()->attach($request->course, ['fee' => $request->fee]);
         return redirect('/student');
