@@ -21,8 +21,10 @@ class CreateHistoriesTable extends Migration
             $table->String('object_type2')->nullable();
             $table->integer('object_id')->unsigned();
             $table->integer('object_id2')->unsigned()->nullable();
+            $table->integer('object_id3')->unsigned()->nullabe();
             $table->String('object_name');
             $table->String('object_desc')->nullable();
+            $table->String('object_desc2')->nullable();
             $table->timestamps();
         });
 

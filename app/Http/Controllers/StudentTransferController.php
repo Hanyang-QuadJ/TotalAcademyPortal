@@ -7,6 +7,7 @@ use App\Student;
 use App\Course;
 use App\Semester;
 use App\History;
+use Illuminate\Support\Facades\Auth;
 
 class StudentTransferController extends Controller
 {
@@ -27,8 +28,21 @@ class StudentTransferController extends Controller
         $student->courses()->attach($request->course, ['fee' => $request->fee]);
         $newcourse = Course::findOrFail($request->course);
         $history = new History();
-        $history->name = $student->name." 학생을 ".$course->name." 강좌에서 ".$newcourse->name." 강좌로 전반처리하였습니다";
+        $history->type = "전반";
+        $history->subject =Auth::user()->name;
+        $history->object_type = "student";
+        $history->object_type2 = "course";
+        $history->object_id = $student->id;
+        $history->object_id2 = $course->id;
+        $history->object_id3 = $newcourse->id;
+        $history->object_name = $student->name;
+        $history->object_desc = $course->name;
+        $history->object_desc2 = $newcourse->name;
         $history->save();
+
+
+
+
         return redirect("/student/$student->id");
 
     }
