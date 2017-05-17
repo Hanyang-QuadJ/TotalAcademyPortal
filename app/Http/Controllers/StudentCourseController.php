@@ -83,6 +83,7 @@ class StudentCourseController extends Controller
         $history->type= "수강 취소";
         $history->subject = Auth::user()->name;
         $history->object_type = "student";
+        $history->object_type2 ="course";
         $history->object_id = $student->id;
         $history->object_id2 = $course->id;
         $history->object_name = $student->name;

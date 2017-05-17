@@ -26,7 +26,8 @@ class StudentsController extends Controller
         $semesters = Semester::all();
         $courses = Course::all();
         $student = Student::all();
-        return view('pages.students.create',compact('semesters','courses','student'));
+        $histories = History::all();
+        return view('pages.students.create',compact('semesters','courses','student','histories'));
     }
 
     public function store(Request $request)
@@ -66,22 +67,27 @@ class StudentsController extends Controller
     {
         //
         $student = Student::findOrFail($id);
-        $student->update($request->all());
         $history = new History();
+        $history->object_desc = $student->name;
+        $student->update($request->all());
         $history->type = "수정";
         $history->subject = Auth::user()->name;
         $history->object_type = "student";
         $history->object_id = $student->id;
         $history->object_name = $student->name;
+
         $history->save();
         return redirect('/student');
     }
+
+
+
 
     public function destroy($id)
     {
         $student = Student::findOrFail($id);
         $history = new History();
-        $history->type = "삭제";
+        $history->type = "퇴원처리";
         $history->subject = Auth::user()->name;
         $history->object_type = "student";
         $history->object_id = $student->id;

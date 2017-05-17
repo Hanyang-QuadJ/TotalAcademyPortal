@@ -24,7 +24,7 @@
 
                 @elseif($history->type =="전반")
                 {{$history->subject}}님이 <a href="/{{$history->object_type}}/{{$history->object_id}}">{{$history->object_name}}</a>
-                학생을 <a href="/{{$history->object_type2}}/{{$history->object_id2}}">{{$history->object_desc}}</a> 강좌에서 <a href="/{{$history->object_type2}}/{{$history->object_id3}}">{{$history->object_desc2}}</a> 강좌로 전반처리 하였습니다.
+                학생을 <a href="/{{$history->object_type2}}/{{$history->object_id2}}">{{$history->object_desc}}</a> 강좌에서 <a href="/{{$history->object_type2}}/{{$history->object_id3}}">{{$history->object_desc2}}</a> 강좌로 전반처리 하였습니다.<br/>
             @else
                 {{$history->subject}}님이
                 <a href="/{{$history->object_type}}/{{$history->object_id}}">{{$history->object_name}}</a>
