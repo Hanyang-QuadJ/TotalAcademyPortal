@@ -99,7 +99,7 @@
                             <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-bell-o" aria-hidden="true"></i></a>
                                 <ul class="dropdown-menu" role="menu">
-                                    @foreach($histories as $history)
+                                    @forelse($histories as $history)
                                         @if($history->type =="삭제")
                                             <span class="history-block">{{$history->subject}}님이
                                             {{$history->object_name}}
@@ -121,7 +121,9 @@
                                             <a href="/{{$history->object_type}}/{{$history->object_id}}">{{$history->object_name}}</a>
                                             학생을 {{$history->type}}했습니다.</span class="history-block">
                                         @endif
-                                    @endforeach
+                                    @empty 
+                                        <span>기록된 히스토리가 없습니다</span>
+                                    @endforelse
                                 </ul>
                             </li>
                         @endif
