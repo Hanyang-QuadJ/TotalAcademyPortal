@@ -36,9 +36,7 @@
                                 </td>
                                 <td>
                                     <a href="/course/{{$course->id}}"><button class="btn btn-success">자세히</button></a>
-                                    <a href="/course/{{$course->id}}/edit">
-                                        <button class="btn btn-default">수정</button>
-                                    </a>
+
                                     <form class="form-inline" action="/course/{{$course->id}}" method="post">
                                         {{method_field('DELETE')}}
                                         {{ csrf_field() }}

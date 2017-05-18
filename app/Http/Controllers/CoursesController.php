@@ -48,8 +48,9 @@ class CoursesController extends Controller
     public function edit($id)
     {
         //
+        $histories = History::all();
         $course = Course::findOrFail($id);
-        return view('pages.courses.edit',compact('course'));
+        return view('pages.courses.edit',compact('course','histories'));
     }
 
     public function update(Request $request, $id)

@@ -14,6 +14,9 @@
             <p>{{$student->parentPhone}}</p>
             <label>학생 핸드폰</label>
             <p>{{$student->studentPhone}}</p>
+            <a href="/student/{{$student->id}}/edit">
+                <button class="btn btn-default">수정</button>
+            </a>
             <div class="row">
                 <div class="col-md-8">
                     <div class="panel panel-default">

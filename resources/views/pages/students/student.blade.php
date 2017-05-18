@@ -50,9 +50,7 @@
                                     <a href="/student/{{$student->id}}">
                                         <button class="btn btn-success">자세히</button>
                                     </a>
-                                    <a href="/student/{{$student->id}}/edit">
-                                        <button class="btn btn-default">수정</button>
-                                    </a>
+
                                     <form class="form-inline" action="/student/{{$student->id}}" method="post">
                                         {{method_field('DELETE')}}
                                         {{ csrf_field() }}
