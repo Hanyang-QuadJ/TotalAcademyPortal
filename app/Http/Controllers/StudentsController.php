@@ -8,7 +8,7 @@ use App\Course;
 use App\History;
 use Illuminate\Support\Facades\Auth;
 
-use phpDocumentor\Reflection\Types\String_;
+//use phpDocumentor\Reflection\Types\String_;
 
 class StudentsController extends Controller
 {
