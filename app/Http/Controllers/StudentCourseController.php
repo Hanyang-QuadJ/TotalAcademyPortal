@@ -40,7 +40,7 @@ class StudentCourseController extends Controller
         $history->object_desc = $course->name;
         $history->save();
         $num = History::all()->count();
-        if ($num > 200)
+        if ($num > 10)
         {
             History::all()->first()
                 ->delete();
@@ -74,7 +74,7 @@ class StudentCourseController extends Controller
         $history->object_desc = $course->name;
         $history->save();
         $num = History::all()->count();
-        if ($num > 200)
+        if ($num > 10)
         {
             History::all()->first()
                 ->delete();
@@ -102,7 +102,7 @@ class StudentCourseController extends Controller
         $history->object_desc = $course->name;
         $history->save();
         $num = History::all()->count();
-        if ($num > 200)
+        if ($num > 10)
         {
             History::all()->first()
                 ->delete();

@@ -35,7 +35,7 @@ class CoursesController extends Controller
         $course->save();
         $history->save();
         $num = History::all()->count();
-        if ($num > 200)
+        if ($num > 10)
         {
             History::all()->first()
                 ->delete();
