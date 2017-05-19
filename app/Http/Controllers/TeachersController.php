@@ -49,7 +49,7 @@ class TeachersController extends Controller
         $history->name = $teacher->name." 강사를 등록하였습니다.";
         $history->save();
         $num = History::all()->count();
-        if ($num > 200)
+        if ($num > 10)
         {
             History::all()->first()
                 ->delete();
