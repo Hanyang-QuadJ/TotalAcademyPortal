@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Student extends Model
 {
     protected $fillable = [
-        'name','school','reason','class','parentPhone','studentPhone',
+        'name','school','reason','class','parentPhone','studentPhone','school_id',
     ];
 
     public function courses()
@@ -24,5 +24,10 @@ class Student extends Model
             ->belongsToMany('App\Exam','exam_student')
             ->withPivot('score')
             ->withTimestamps();
+    }
+    public function school()
+    {
+        return $this
+            ->belongsTo('App\School');
     }
 }

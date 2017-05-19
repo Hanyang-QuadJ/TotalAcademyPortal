@@ -22,6 +22,12 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+$factory->define(App\School::class, function (Faker\Generator $faker) {
+
+    return [
+        'name' => $faker->company."학교,"
+    ];
+});
 $factory->define(App\Student::class, function (Faker\Generator $faker) {
 
     return [
@@ -31,6 +37,7 @@ $factory->define(App\Student::class, function (Faker\Generator $faker) {
         'class' => $faker->company,
         'parentPhone' => $faker->phoneNumber,
         'studentPhone' => $faker->phoneNumber,
+        'school_id' => $faker->numberBetween($min = 1, $max = 5),
     ];
 });
 $factory->define(App\Academy::class, function (Faker\Generator $faker) {
@@ -84,3 +91,5 @@ $factory->define(App\ExamStudent::class, function (Faker\Generator $faker) {
         'score' => $faker->numberBetween($min = 50, $max = 100),
     ];
 });
+
+

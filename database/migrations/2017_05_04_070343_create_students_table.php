@@ -21,6 +21,12 @@ class CreateStudentsTable extends Migration
             $table->String('class');
             $table->String('parentPhone')->unique();
             $table->String('studentPhone')->unique();
+            $table->integer('school_id')->unsigned();
+            $table
+                ->foreign('school_id')
+                ->references('id')
+                ->on('schools')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }
