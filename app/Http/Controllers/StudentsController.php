@@ -17,7 +17,9 @@ class StudentsController extends Controller
         //
         $histories = History::all();
         $students = Student::all();
-        return view('pages.students.student',compact('students','histories'));
+        $semesters = Semester::all();
+        $courses = Course::all();
+        return view('pages.students.student',compact('students','histories','semesters','courses'));
     }
 
     public function create()
