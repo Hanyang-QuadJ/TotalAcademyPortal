@@ -43,7 +43,7 @@ $factory->define(App\Course::class, function (Faker\Generator $faker) {
 
     return [
         'name' => $faker->name.".강좌",
-        'fee' => $faker->numberBetween($min = 100000, $max = 900000),
+//        'generalfee' => $faker->numberBetween($min = 100000, $max = 900000),
         'semester_id' => $faker->numberBetween($min = 1, $max = 5),
         'teacher_id' => $faker->numberBetween($min = 1, $max = 10),
 

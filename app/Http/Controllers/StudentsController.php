@@ -43,6 +43,12 @@ class StudentsController extends Controller
         $history->object_name = $student->name;
 
         $history->save();
+        $num = History::all()->count();
+        if ($num > 200)
+        {
+            History::all()->first()
+                ->delete();
+        }
         $student->courses()->attach($request->course, ['fee' => $request->fee]);
         return redirect('/student');
     }
@@ -77,6 +83,12 @@ class StudentsController extends Controller
         $history->object_name = $student->name;
 
         $history->save();
+        $num = History::all()->count();
+        if ($num > 200)
+        {
+            History::all()->first()
+                ->delete();
+        }
         return redirect('/student');
     }
 
@@ -93,6 +105,12 @@ class StudentsController extends Controller
         $history->object_id = $student->id;
         $history->object_name = $student->name;
         $history->save();
+        $num = History::all()->count();
+        if ($num > 200)
+        {
+            History::all()->first()
+                ->delete();
+        }
         Student::destroy($id);
         return redirect('/student');
     }

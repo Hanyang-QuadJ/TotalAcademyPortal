@@ -48,6 +48,12 @@ class TeachersController extends Controller
         $history = new History();
         $history->name = $teacher->name." 강사를 등록하였습니다.";
         $history->save();
+        $num = History::all()->count();
+        if ($num > 200)
+        {
+            History::all()->first()
+                ->delete();
+        }
 
         return redirect('/teacher');
     }

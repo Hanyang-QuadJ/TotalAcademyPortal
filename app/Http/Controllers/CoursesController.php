@@ -34,6 +34,12 @@ class CoursesController extends Controller
         $history->name = $request->name." 강좌를 등록하였습니다";
         $course->save();
         $history->save();
+        $num = History::all()->count();
+        if ($num > 200)
+        {
+            History::all()->first()
+                ->delete();
+        }
         return redirect('/course');
     }
 

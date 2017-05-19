@@ -40,6 +40,12 @@ class StudentTransferController extends Controller
         $history->object_desc = $course->name;
         $history->object_desc2 = $newcourse->name;
         $history->save();
+        $num = History::all()->count();
+        if ($num > 200)
+        {
+            History::all()->first()
+                ->delete();
+        }
 
 
 
