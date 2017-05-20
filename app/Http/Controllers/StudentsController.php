@@ -61,6 +61,7 @@ class StudentsController extends Controller
     {
         $student = Student::findOrFail($id);
 
+
         $histories = History::all();
         return view('pages.students.show',compact('student','histories'));
     }

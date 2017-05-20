@@ -84,10 +84,15 @@
                                     </div>
 
                                     <div class="col-lg-4">
-                                        <div class="input-group">
-                                            <div class="input-group-addon"><i class="fa fa-graduation-cap"></i></div>
-                                            <input type="text" name="school" class="form-control" placeholder="학교를 입력하세요">
-                                        </div>
+                                        <select name="school_id" id="student-schoolCreate">
+                                            @foreach($schools as $school)
+
+                                                <option value="{{$school->id}}">{{$school->name}}</option>
+
+
+                                            @endforeach
+                                        </select>
+
                                     </div>
 
                                     <div class="col-lg-4">
@@ -194,6 +199,13 @@
                 });
             });
         });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#student-schoolCreate').select2();
+            $('#student-schoolCreate').select2().maximizeSelect2Height();
+        });
+
     </script>
 @endsection
 

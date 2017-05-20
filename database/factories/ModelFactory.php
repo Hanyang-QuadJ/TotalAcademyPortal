@@ -25,7 +25,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 $factory->define(App\School::class, function (Faker\Generator $faker) {
 
     return [
-        'name' => $faker->company."학교,"
+        'name' => $faker->locale.".학교"
     ];
 });
 $factory->define(App\Student::class, function (Faker\Generator $faker) {
