@@ -104,6 +104,10 @@
                                             <span class="history-block">{{$history->subject}}님이
                                             {{$history->object_name}}
                                             학생을 {{$history->type}}했습니다.</span>
+                                            @elseif($history->type =="학교등록")
+                                                <span class="history-block">{{$history->subject}}님이
+                                                    <a href="/{{$history->object_type}}/{{$history->object_id}}">{{$history->object_name}}</a>
+                                                    학교를 {{$history->type}}했습니다.</span>
                                         @elseif($history->type =="강좌 등록")
                                             <span class="history-block">{{$history->subject}}님이 <a href="/{{$history->object_type}}/{{$history->object_id}}">{{$history->object_name}}</a>
                                             학생을 <a href="/{{$history->object_type2}}/{{$history->object_id2}}">{{$history->object_desc}}</a> 강좌에 등록했습니다.</span>

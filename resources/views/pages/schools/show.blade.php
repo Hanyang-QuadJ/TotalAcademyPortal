@@ -5,7 +5,7 @@
             <h2>{{$school->name}} 상세정보</h2>
 
             <hr>
-            <h3>강좌목록</h3>
+            <h3>학생목록</h3>
             <div class="row">
                 <div class="col-lg-12">
                     <table id="school-showtable" class="table table-striped table-bordered" cellspacing="0">

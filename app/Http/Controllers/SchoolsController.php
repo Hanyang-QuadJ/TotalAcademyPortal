@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\School;
 use App\History;
+use Illuminate\Support\Facades\Auth;
 
 class SchoolsController extends Controller
 {
@@ -41,6 +42,23 @@ class SchoolsController extends Controller
     public function store(Request $request)
     {
         //
+        $school = new School($request->all());
+        $school->save();
+        $history = new History();
+        $history->type = "학교등록";
+        $history->subject = Auth::user()->name;
+        $history->object_type = "school";
+        $history->object_id = $school->id;
+        $history->object_name = $school->name;
+
+        $history->save();
+        $num = History::all()->count();
+        if ($num > 10)
+        {
+            History::all()->first()
+                ->delete();
+        }
+        return redirect('/school');
     }
 
     /**
@@ -66,6 +84,9 @@ class SchoolsController extends Controller
     public function edit($id)
     {
         //
+        $school = School::findOrFail($id);
+        $histories = History::all();
+        return view('pages.schools.edit',compact('school','histories'));
     }
 
     /**
@@ -78,6 +99,9 @@ class SchoolsController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $school = School::findOrFail($id);
+        $school->update($request->all());
+        return redirect('/school');
     }
 
     /**
@@ -89,5 +113,7 @@ class SchoolsController extends Controller
     public function destroy($id)
     {
         //
+        School::destroy($id);
+        return redirect('/school');
     }
 }
