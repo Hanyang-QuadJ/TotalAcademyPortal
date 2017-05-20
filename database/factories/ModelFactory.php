@@ -32,7 +32,6 @@ $factory->define(App\Student::class, function (Faker\Generator $faker) {
 
     return [
         'name' => $faker->name.".학생",
-        'school' => $faker->colorName.".학교",
         'reason' => $faker->locale,
         'class' => $faker->company,
         'parentPhone' => $faker->phoneNumber,

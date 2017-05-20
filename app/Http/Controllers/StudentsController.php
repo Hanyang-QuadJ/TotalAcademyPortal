@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Student;
 use App\Course;
 use App\History;
+use App\School;
 use Illuminate\Support\Facades\Auth;
 
 //use phpDocumentor\Reflection\Types\String_;
@@ -17,9 +18,10 @@ class StudentsController extends Controller
         //
         $histories = History::all();
         $students = Student::all();
+        $schools = School::all();
         $semesters = Semester::all();
         $courses = Course::all();
-        return view('pages.students.student',compact('students','histories','semesters','courses'));
+        return view('pages.students.student',compact('students','histories','semesters','courses','schools'));
     }
 
     public function create()
@@ -58,6 +60,7 @@ class StudentsController extends Controller
     public function show($id)
     {
         $student = Student::findOrFail($id);
+
         $histories = History::all();
         return view('pages.students.show',compact('student','histories'));
     }

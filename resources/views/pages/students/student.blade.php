@@ -40,7 +40,7 @@
                             <tr>
 
                                 <td>{{$student->name}}</td>
-                                <th>{{$student->school}}</th>
+                                <th>{{$student->school->name}}</th>
                                 <th>{{$student->class}}</th>
 
                                 <th>{{$student->parentPhone}}</th>

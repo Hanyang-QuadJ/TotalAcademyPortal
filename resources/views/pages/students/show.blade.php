@@ -5,7 +5,7 @@
             <h2>{{$student->name}} 상세정보</h2>
             <hr>
             <label>학교</label>
-            <p>{{$student->school}}</p>
+            <p>{{$student->school->name}}</p>
             <label>동기</label>
             <p>{{$student->reason}}</p>
             <label>계열</label>

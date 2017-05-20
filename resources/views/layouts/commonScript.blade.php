@@ -36,6 +36,11 @@
     } );
 </script>
 <script>
+    $(document).ready(function() {
+        $('#school-table').DataTable();
+    } );
+</script>
+<script>
     $(document).ready(function () {
       var currentURL = (window.location.href).split('/');
       console.log(currentURL);

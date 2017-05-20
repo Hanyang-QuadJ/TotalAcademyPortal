@@ -23,7 +23,7 @@
             <a href="/exam">시험</a>
         </li>
         <li>
-            <a href="/history">히스토리</a>
+            <a href="/school">학교</a>
         </li>
 
     </ul>
