@@ -7,6 +7,7 @@ use App\Course;
 use App\Semester;
 use App\Teacher;
 use App\History;
+use Illuminate\Support\Facades\Auth;
 
 class CoursesController extends Controller
 {
@@ -15,8 +16,9 @@ class CoursesController extends Controller
 
         $histories = History::all();
         $courses = Course::all();
+        $teachers = Teacher::all();
         $semesters = Semester::all();
-        return view('pages.courses.course',compact('courses','semesters','histories'));
+        return view('pages.courses.course',compact('courses','semesters','histories','teachers'));
     }
 
     public function create()
@@ -30,9 +32,13 @@ class CoursesController extends Controller
     {
         //
         $course = new Course($request->all());
-        $history = new History();
-        $history->name = $request->name." 강좌를 등록하였습니다";
         $course->save();
+        $history = new History();
+        $history->subject = Auth::user()->name;
+        $history->type = "신규강좌등록";
+        $history->object_type = "course";
+        $history->object_id = $course->id;
+        $history->object_name = $course->name;
         $history->save();
         $num = History::all()->count();
         if ($num > 10)

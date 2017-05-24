@@ -111,6 +111,10 @@
                                         @elseif($history->type =="강좌 등록")
                                             <span class="history-block">{{$history->subject}}님이 <a href="/{{$history->object_type}}/{{$history->object_id}}">{{$history->object_name}}</a>
                                             학생을 <a href="/{{$history->object_type2}}/{{$history->object_id2}}">{{$history->object_desc}}</a> 강좌에 등록했습니다.</span>
+                                            @elseif($history->type =="신규강좌등록")
+                                            <span class="history-block">{{$history->subject}}님이 <a href="/{{$history->object_type}}/{{$history->object_id}}">{{$history->object_name}}</a>
+                                                강좌를 등록했습니다.</span>
+
                                         @elseif($history->type =="수강료 수정")
                                             <span class="history-block">{{$history->subject}}님이 <a href="/{{$history->object_type}}/{{$history->object_id}}">{{$history->object_name}}</a>
                                             학생의 <a href="/{{$history->object_type2}}/{{$history->object_id2}}">{{$history->object_desc}}</a> 강좌 수강료를 수정했습니다.</span>

@@ -5,6 +5,10 @@
             <h2>{{$course->name}} 상세정보</h2>
             <h4>{{$course->semester->name}}</h4>
             <hr>
+            <label>강사</label>
+            <span>{{$course->teacher->name}}</span><br>
+            <label>수강료</label>
+            <span>{{$course->fee}}</span><br>
             <a href="/course/{{$course->id}}/edit">
                 <button class="btn btn-default">수정</button>
             </a>
