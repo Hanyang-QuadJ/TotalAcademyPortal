@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Teacher;
 use App\History;
+use Illuminate\Support\Facades\Auth;
 
 class TeachersController extends Controller
 {
@@ -31,7 +32,8 @@ class TeachersController extends Controller
     public function create()
     {
         //
-        return view('pages.teachers.create');
+        $histories = History::all();
+        return view('pages.teachers.create', compact('histories'));
     }
 
     /**
@@ -46,7 +48,11 @@ class TeachersController extends Controller
         $teacher = new Teacher($request->all());
         $teacher->save();
         $history = new History();
-        $history->name = $teacher->name." 강사를 등록하였습니다.";
+        $history->type = "강사등록";
+        $history->subject = Auth::user()->name;
+        $history->object_type = "teacher";
+        $history->object_id = $teacher->id;
+        $history->object_name = $teacher->name;
         $history->save();
         $num = History::all()->count();
         if ($num > 10)
@@ -82,7 +88,8 @@ class TeachersController extends Controller
     {
         //
         $teacher = Teacher::findOrFail($id);
-        return view('pages.teachers.edit',compact('teacher'));
+        $histories = History::all();
+        return view('pages.teachers.edit',compact('teacher', 'histories'));
     }
 
     /**
@@ -96,7 +103,21 @@ class TeachersController extends Controller
     {
         //
         $teacher = Teacher::findOrFail($id);
+        $history = new History();
+        $history->object_desc = $teacher->name;
         $teacher->update($request->all());
+        $history->type = "강사수정";
+        $history->subject = Auth::user()->name;
+        $history->object_type = "teacher";
+        $history->object_id = $teacher->id;
+        $history->object_name = $teacher->name;
+        $history->save();
+        $num = History::all()->count();
+        if ($num > 10)
+        {
+            History::all()->first()
+                ->delete();
+        }
         return redirect('/teacher');
     }
 
@@ -109,6 +130,20 @@ class TeachersController extends Controller
     public function destroy($id)
     {
         //
+        $teacher = Teacher::findOrFail($id);
+        $history = new History();
+        $history->type = "강사등록";
+        $history->subject = Auth::user()->name;
+        $history->object_type = "teacher";
+        $history->object_id = $teacher->id;
+        $history->object_name = $teacher->name;
+        $history->save();
+        $num = History::all()->count();
+        if ($num > 10)
+        {
+            History::all()->first()
+                ->delete();
+        }
         Teacher::destroy($id);
         return redirect('/teacher');
     }

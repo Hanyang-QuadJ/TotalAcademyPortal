@@ -35,7 +35,7 @@ class CoursesController extends Controller
         $course->save();
         $history = new History();
         $history->subject = Auth::user()->name;
-        $history->type = "신규강좌등록";
+        $history->type = "강좌등록";
         $history->object_type = "course";
         $history->object_id = $course->id;
         $history->object_name = $course->name;
@@ -69,12 +69,40 @@ class CoursesController extends Controller
     {
         //
         $course = Course::findOrFail($id);
+        $history = new History();
+        $history->object_desc = $course->name;
         $course->update($request->all());
+        $history->subject = Auth::user()->name;
+        $history->type = "강좌수정";
+        $history->object_type = "course";
+        $history->object_id = $course->id;
+        $history->object_name = $course->name;
+        $history->save();
+        $num = History::all()->count();
+        if ($num > 10)
+        {
+            History::all()->first()
+                ->delete();
+        }
         return redirect('/course');
     }
 
     public function destroy($id)
     {
+        $course = Course::findOrFail($id);
+        $history = new History();
+        $history->subject = Auth::user()->name;
+        $history->type = "강좌삭제";
+        $history->object_type = "course";
+        $history->object_id = $course->id;
+        $history->object_name = $course->name;
+        $history->save();
+        $num = History::all()->count();
+        if ($num > 10)
+        {
+            History::all()->first()
+                ->delete();
+        }
         Course::destroy($id);
         return redirect('/course');
     }

@@ -101,6 +101,20 @@ class SchoolsController extends Controller
         //
         $school = School::findOrFail($id);
         $school->update($request->all());
+        $history = new History();
+        $history->type = "학교수정";
+        $history->subject = Auth::user()->name;
+        $history->object_type = "school";
+        $history->object_id = $school->id;
+        $history->object_name = $school->name;
+
+        $history->save();
+        $num = History::all()->count();
+        if ($num > 10)
+        {
+            History::all()->first()
+                ->delete();
+        }
         return redirect('/school');
     }
 
@@ -113,7 +127,23 @@ class SchoolsController extends Controller
     public function destroy($id)
     {
         //
+        $school = School::findOrFail($id);
+        $history = new History();
+        $history->type = "학교삭제";
+        $history->subject = Auth::user()->name;
+        $history->object_type = "school";
+        $history->object_id = $school->id;
+        $history->object_name = $school->name;
+
+        $history->save();
+        $num = History::all()->count();
+        if ($num > 10)
+        {
+            History::all()->first()
+                ->delete();
+        }
         School::destroy($id);
+
         return redirect('/school');
     }
 }

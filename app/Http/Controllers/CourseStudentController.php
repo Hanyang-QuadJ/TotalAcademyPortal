@@ -26,11 +26,12 @@ class CourseStudentController extends Controller
     {
         $student = Student::findOrFail($studentId);
         $course = Course::findOrFail($courseId);
+        $histories = History::all();
 
         $fee = $course->students->where('id', $studentId)->first()->pivot->fee;
 
 
-        return view('pages.courses.studentEdit', compact('student','course','fee'));
+        return view('pages.courses.studentEdit', compact('student','course','fee', 'histories'));
     }
     public function update(Request $request, $courseId, $studentId)
     {

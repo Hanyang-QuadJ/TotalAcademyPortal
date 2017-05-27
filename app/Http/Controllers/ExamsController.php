@@ -16,7 +16,8 @@ class ExamsController extends Controller
 
     public function create()
     {
-        return view('pages.exams.create');
+        $histories = History::all();
+        return view('pages.exams.create',compact('histories'));
     }
 
     public function store(Request $request)
