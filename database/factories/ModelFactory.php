@@ -59,6 +59,10 @@ $factory->define(App\Teacher::class, function (Faker\Generator $faker) {
 
     return [
         'name' => $faker->name.".강사",
+        'teacherPhone' => $faker->phoneNumber,
+        'memo'  => $faker->text,
+        'dob' => $faker->date('Y-m-d'),
+        'address' => $faker->address,
     ];
 });
 $factory->define(App\Semester::class, function (Faker\Generator $faker) {

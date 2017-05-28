@@ -8,7 +8,7 @@ class Teacher extends Model
 {
     //
     protected $fillable = [
-        'name',
+        'name','teacherPhone','memo','dob','address',
     ];
 
     public function courses()
