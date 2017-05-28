@@ -46,6 +46,7 @@
                         <thead>
                         <tr>
                             <th>이름</th>
+                            <th>수강료</th>
                             <th>등록날짜</th>
                             <th>관리</th>
                         </tr>
@@ -53,6 +54,7 @@
                         <tfoot>
                         <tr>
                             <th>이름</th>
+                            <th>수강료</th>
                             <th>등록날짜</th>
                             <th>관리</th>
                         </tr>
@@ -62,6 +64,7 @@
                             <tr>
 
                                 <td>{{$course->name}}</td>
+                                <td>{{$course->fee}}</td>
                                 <td>
                                     {{$course->created_at->format('Y-m-d')}}
 

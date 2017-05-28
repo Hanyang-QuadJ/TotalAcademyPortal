@@ -14,6 +14,14 @@
                             <div class="input-group-addon"><i class="fa fa-user"></i></div>
                             <input type="text" name="name" class="form-control" placeholder="이름을 입력하세요">
                         </div>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                            <input type="text" name="teacherPhone" class="form-control" placeholder="번호를 입력하세요">
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                            <input type="text" name="address" class="form-control" placeholder="이름을 입력하세요">
+                        </div>
                     </div>
                     <button type="submit" class="btn new-btn">등록</button>
                 </form>
